@@ -1,0 +1,114 @@
+body{
+    margin: 15px;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin-top: 25px;
+}
+
+.header .form-group {
+    border: 1px solid grey;
+    border-top: 8px solid green;
+    border-radius: 5px;
+}
+
+.main p{
+    margin: 3px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+}
+.main .form-group .header{
+    height: 35px;
+    background-color: green;
+
+}
+
+.header span{
+    margin-left: 2%;
+}
+
+h3,p,label,input{
+    margin-left: 2%;
+}
+
+
+/*.header .form-group{
+    display: flex;
+    flex-direction: column;
+    flex-direction: column;
+    border: 1px solid grey;
+    border-radius: 5px;
+}*/
+
+.header .form-group h3{
+    font-size: 1.5em;
+    text-align: center;
+}
+
+input{
+    border-top: hidden;
+    border-left: hidden;
+    border-radius: hidden;
+    border-bottom: groove;
+}
+
+input:focus{
+    outline: none
+}
+
+.required{
+    margin-top: 5px;
+    color: red;
+}
+
+.main{
+    margin-top: 10px;
+}
+
+/*
+.main .form-group{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin-top: 25px;
+}*/
+.main input{
+    margin-top: 10px;
+}
+
+.footer{
+    margin-top: 15px;
+}
+
+progress[value]{
+    width: 250px;
+    height: 20px;
+}
+
+.footer .form-btn{
+    width: 80px;
+    height: 30px;
+    color: white;
+    background-color: green;
+    font-weight: 500;
+    margin-top: 15px;
+    margin-left: 15px;
+    border-radius: 5px;
+}
+
+.back-btn{
+    width: 80px;
+    height: 30px;
+    color: green;
+    font-weight: 500;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+
+

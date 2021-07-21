@@ -1,0 +1,126 @@
+<body>
+	<div class="header">
+		<div class="form-group">
+			<h3>MENTOR APPLICATION FORM</h3>
+			<span class="required">*Required</span>
+		</div>
+	</div>
+
+		<div class="main">
+		<div class="form-group" [class.has-error]="persType.invalid && persType.touched">
+			<span class="header"><label class="intro">Academic and professional background</label></span>
+			<label for="persType"class="control-label">Personality type (the results from the personality test you took before hand) 
+			<span class="required">*</span></label>			
+			<input type="text" id="persType"[(ngModel)]="mentorEducation.persType" name="mentorEducation.persType" 
+			class="control-form" placeholder="Your answer" required #persType="ngModel">
+			<span class="help-block" *ngIf="persType.invalid && persType.touched">
+				Personality type is required
+			</span>
+		</div>
+
+		<div class="form-group" [class.has-error]="qualification.invalid && qualification.touched">
+			<label for="qualification"class="control-label">Tertiary qualification/Study field <span class="required">*</span></label>
+			<input type="text" id="qualification" [(ngModel)]="mentorEducation.qualification" name="mentorEducation.qualification"
+			 class="control-form" placeholder="Your answer" required #qualification="ngModel">
+			 <span class="help-block" *ngIf="qualification.invalid && qualification.touched" >
+				Tertiary qualification/Study field is required
+			</span>
+		</div>
+
+		<div class="form-group" [class.has-error]="institution.invalid && institution.touched">
+			<label for="institution"class="control-label">Institution <span class="required">*</span></label>
+			<input type="text" id="institution" [(ngModel)]="mentorEducation.institution" name="mentorEducation.institution" 
+			class="control-form" placeholder="Your answer" required #institution="ngModel">
+			<span class="help-block" *ngIf="institution.invalid && institution.touched" >
+				Institution is required
+			</span>
+		</div>
+
+		<div class="form-group">
+			<label>2nd qualification </label>
+			<input type="text" [(ngModel)]="mentorEducation.secQualification" name="mentorEducation.secQualification" class="control-form" placeholder="Your answer">
+		</div>
+
+		<div class="form-group">
+			<label>Institution </label>
+			<input type="text" [(ngModel)]="mentorEducation.secInstitution" name="mentorEducation.secInstitution" class="control-form" placeholder="Your answer">
+		</div>
+
+		<div class="form-group" [class.has-error]="studyLevel.invalid && studyLevel.touched">
+			<label>Level of study <span class="required">*</span></label>
+			<div class="myRadio">
+			<label><input type="radio" [(ngModel)]="mentorEducation.studyLevel" name="mentorEducation.studyLevel" 
+			value="1st Year" class="control-form" required #studyLevel="ngModel">1st year</label>
+			<label><input type="radio" [(ngModel)]="mentorEducation.studyLevel" name="mentorEducation.studyLevel" 
+			value="2nd Year" class="control-form" required #studyLevel="ngModel">2nd years</label>
+			<label><input type="radio" [(ngModel)]="mentorEducation.studyLevel" name="mentorEducation.studyLevel" 
+			value="3rd Year" class="control-form" required #studyLevel="ngModel">3rd years</label>
+			<label><input type="radio" [(ngModel)]="mentorEducation.studyLevel" name="mentorEducation.studyLevel" 
+			value="other Level" class="control-form" required #studyLevel="ngModel">3+ years</label>
+			</div>
+			<span class="help-block" *ngIf="studyLevel.invalid && studyLevel.touched" >
+				Level of study is required
+			</span>
+		</div>
+
+		<div class="form-group">
+			<label>Please disclose any academic awards or special achievement </label>
+			<input type="text" [(ngModel)]="mentorEducation.award" name="mentorEducation.award" class="control-form" placeholder="Your answer">
+		</div>
+
+		<div class="form-group" [class.has-error]="organization.invalid && organization.touched">
+			<label>Are/were you a member of any student organization <span class="required">*</span></label>
+			<div class="myRadio">
+				<label><input type="radio" [(ngModel)]="mentorEducation.organization" name="mentorEducation.organization" 
+				value="yes" class="control-form" required #organization="ngModel">Yes</label>
+				<label><input type="radio" [(ngModel)]="mentorEducation.organization" name="mentorEducation.organization" 
+				value="no" class="control-form" required #organization="ngModel">No</label>
+			</div>
+			<span class="help-block" *ngIf="organization.invalid && organization.touched" >
+				This field is required
+			</span>
+			
+		</div>
+
+		<div class="form-group" [class.has-error]="specificOrganization.invalid">
+			<label>If yes, please specify the name of the organization and the position you last held</label>
+			<input type="text" [(ngModel)]="mentorEducation.specificOrganization" #specificOrganization="ngModel"  [required]="organization.value=='yes'"
+			name="mentorEducation.specificOrganization" class="control-form" placeholder="Your answer">
+			<span class="help-block" *ngIf="specificOrganization.invalid">
+				Name of the organization and the position are required
+			</span>
+		</div>
+
+		<div class="form-group">
+			<label>Any work experience within your study field? If yes, please specify position and the name of the organization. If no you may skip.</label>
+			<input type="text" [(ngModel)]="mentorEducation.workkExperience" name="mentorEducation.workkExperience" class="control-form" placeholder="Your answer">
+		</div>
+
+		<div class="form-group">
+			<label>Do you belong to any professional body? If yes, please specify the name of the body. If no, you may skip.</label>
+			<input type="text" [(ngModel)]="mentorEducation.profBody" name="mentorEducation.profBody" class="control-form" placeholder="Your answer">
+		</div> 
+
+		<div class="footer">
+			
+			<div class="form-progress">
+				<progress value="50" max="100" >50% </progress>
+				<label class="pages">Page 2 of 4</label>
+			</div>
+			<span class="errMessage">
+				{{errMessage}}
+			</span>
+
+			<div class="form-button">
+				<button class="back-btn" (click)="personal()">Back</button>				
+				<button class="form-btn" (click)="mentorBackground()">Next</button>
+			</div>
+		</div>
+
+	</div>
+
+	 <div class="footer">
+        
+		<p>&copy; Edulight 2021</p>
+	</div>
+</body>

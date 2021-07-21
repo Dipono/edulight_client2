@@ -1,0 +1,167 @@
+<body>
+	<div class="header">
+		<div class="form-group">
+			<h3>MENTOR APPLICATION FORM</h3>
+			<p>Thank you! For your interest in being a mentor at Edulight Academia. Please make sure you take the personality test( <a href="">https://16personalities.com/free-personality-test</a> ) before you fill in this form.</p>
+			<span class="required">*Required</span>
+		</div>
+	</div> 
+
+	<form>
+		<div class="main">
+		<div class="form-group" [class.has-error]="fullName.invalid && fullName.touched"
+			[class.has-success]="fullName.valid">
+			<label for="fullName"class="control-label">Full Names <span class="required">*</span></label>
+			<input type="text" id="fullName" [(ngModel)]="mentor.fullName" name="mentor.fullName" 
+			class="control-form" placeholder="Your answer" required #fullName="ngModel">
+			<span class="help-block" *ngIf="fullName.invalid && fullName.touched">
+				Full Name is required
+			</span>
+
+		</div>
+
+		<div class="form-group" [class.has-error]="surname.invalid && surname.touched">
+			<label for="surname"class="control-label">Surname <span class="required">*</span></label>
+			<input type="text" id="surname" [(ngModel)]="mentor.surname" name="mentor.surname" class="control-form" 
+			placeholder="Your answer" required #surname="ngModel">
+			<span class="help-block" *ngIf="surname.invalid && surname.touched">
+				Surname is required
+			</span>
+		</div>
+
+		<div class="form-group" [class.has-error]="dob.invalid && dob.touched">
+			<label for="dob"class="control-label">Date of Birth <span class="required">*</span></label>
+			<input type="date" id="dob" [(ngModel)]="mentor.dob" name="mentor.dob" 
+			class="control-form" placeholder="Date" required #dob="ngModel">
+			<span class="help-block" *ngIf="dob.invalid && dob.touched">
+				Date of Birth is required
+			</span>
+		</div>
+
+		<div class="form-group" [class.has-error]="reAddress.invalid && reAddress.touched">
+			<label for="reAddress"class="control-label">Residential Address <span class="required">*</span></label>
+			<input type="text" id="reAddress" [(ngModel)]="mentor.reAddress" name="mentor.reAddress" 
+			class="control-form" placeholder="Your answer" required #reAddress="ngModel">
+			<span class="help-block" *ngIf="reAddress.invalid && reAddress.touched">
+				Residential Address is required
+			</span>
+		</div>
+
+		<div class="form-group" [class.has-error]="gender.invalid && gender.touched">
+			<label>Gender <span class="required">*</span></label>
+			<div class="myRadio">
+				<label><input type="radio" required #gender="ngModel" [(ngModel)]="mentor.gender" 
+			name="mentor.gender" value="Female" class="control-form">Female</label>
+			<label><input type="radio" required #gender="ngModel" [(ngModel)]="mentor.gender" 
+			name="mentor.gender" value="Male" class="control-form">Male</label>
+			<label><input type="radio" required #gender="ngModel" [(ngModel)]="mentor.gender" 
+			name="mentor.gender" value="Other" class="control-form">Other</label>
+			</div>
+			<span class="help-block" *ngIf="gender.invalid && gender.touched">
+				Gender is required
+			</span>
+		</div>
+
+		<div class="form-group" [class.has-error]="cellNo.invalid && cellNo.touched">
+			<label for="cellNo"class="control-label">Cell Number <span class="required">*</span></label>
+			<input type="tel" id="cellNo" [(ngModel)]="mentor.cellNo" name="mentor.cellNo" 
+			class="control-form" placeholder="Your answer" required #cellNo="ngModel">
+			<span class="help-block" *ngIf="cellNo.invalid && cellNo.touched">
+				Cell Number is required
+			</span>
+		</div>
+
+		<div class="form-group">
+			<label>Alternative Number</label>
+			<input type="tel" [(ngModel)]="mentor.altCellNo" name="mentor.altCellNo" class="control-form" placeholder="Your answer">
+		</div>
+
+		<!--<div class="form-group" [class.has-error]="email.invalid && email.touched">
+			<label for="email"class="control-label">Email Address <span class="required">*</span></label>
+			<input type="email" id="email" [(ngModel)]="mentor.email" name="mentor.email" 
+			class="control-form" placeholder="Your answer" required email #email="ngModel">
+			<span class="help-block" *ngIf="email.errors?.required && email.touched">
+				Email Address is required
+			</span>
+			<span class="help-block" *ngIf="email.errors?.email && email.touched">
+				Email Address is invalid
+			</span>
+		</div>-->
+
+		<div class="form-group" [class.has-error]="email.invalid && email.touched">
+			<label for="email"class="control-label">Email Address <span class="required">*</span></label>
+			<input type="email" id="email" [(ngModel)]="mentor.email" name="mentor.email" 
+			class="control-form" placeholder="Your answer" required
+			pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" #email="ngModel">
+			<span class="help-block" *ngIf="email.errors?.required && email.touched">
+				Email Address is required
+			</span>
+			<span class="help-block" *ngIf="email.errors?.pattern && email.touched">
+				Email Address is invalid
+			</span>
+		</div>
+
+		<div class="form-group" [class.has-error]="disability.invalid && disability.touched">
+			<label>Are you a Person Living with a Disability <span class="required">*</span></label>
+			<div class="myRadio">
+				<label><input type="radio" required #disability="ngModel" [(ngModel)]="mentor.disability" 
+				name="mentor.disability" value="yes" class="control-form">Yes</label>
+				<label><input type="radio" required #disability="ngModel" [(ngModel)]="mentor.disability" 
+				name="mentor.disability" value="no" class="control-form">No</label>
+			</div>
+			<span class="help-block" *ngIf="disability.invalid && disability.touched">
+				This field is required
+			</span>
+		</div>
+			
+		<div class="form-group" [class.has-error]="disabilityInfo.invalid">
+			<label>If Yes, Please Describe </label>
+			<input type="text" [(ngModel)]="mentor.disabilityInfo" name="mentor.disabilityInfo" class="control-form" 
+			placeholder="Your answer" [required]="disability.value=='yes'" #disabilityInfo="ngModel">
+			<span class="help-block" *ngIf="disabilityInfo.invalid">
+				Describe you disability
+			</span>
+		</div>
+
+		<div class="form-group">
+			<label>Facebook Name</label>
+			<input type="text" [(ngModel)]="mentor.facebook" name="mentor.facebook" class="control-form" placeholder="Your answer">
+		</div>
+
+		<div class="form-group">
+			<label>Twitter Handler</label>
+			<input type="text" [(ngModel)]="mentor.twitter" name="mentor.twitter" class="control-form" placeholder="Your answer">
+		</div>
+
+		<div class="form-group">
+			<label>Instagram Handler</label>
+			<input type="text" [(ngModel)]="mentor.instagram" name="mentor.instagram" class="control-form" placeholder="Your answer">
+		</div>
+
+		<div class="form-group">
+			<label>LinkedIn Profile Name</label>
+			<input type="text" [(ngModel)]="mentor.linkedin" name="mentor.linkedin" class="control-form" placeholder="Your answer">
+		</div>
+
+		<div class="footer">
+			
+			<div class="form-progress">
+				<progress value="25" max="100" >25% </progress>
+				<label class="pages">Page 1 of 4</label>
+			</div>
+			<span class="errMessage">
+				{{errMessage}}
+			</span>
+			<div class="form-button">
+				<!--<button class="form-btn" (click)="educational()">Next</button>-->
+				<button type="submit" (click)="educational()" class="form-btn">Next</button>
+			</div>
+		</div>
+	</div>
+	</form>
+	
+	 <div class="footer">
+        
+		<p>&copy; Edulight 2021</p>
+	</div>
+</body>
