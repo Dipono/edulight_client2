@@ -49,9 +49,22 @@ export class MentorEducationalInfoComponent implements OnInit {
         }
       };
       console.log('array ', getValues)
+      
+
+      if(this.mentorEducation.organization == 'yes'){
+        if(this.mentorEducation.specificOrganization == ''){
+
+        }
+        else{
+        this._router.navigate(['/mentor-background-info'],getValues)
+          
+        }
+      }
+      else{
+      this._router.navigate(['/mentor-background-info'],getValues)        
+      }
   
       
-      this._router.navigate(['/mentor-background-info'],getValues)
     }
 
     else{

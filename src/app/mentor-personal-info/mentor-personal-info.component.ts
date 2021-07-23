@@ -58,26 +58,39 @@ export class MentorPersonalInfoComponent implements OnInit {
 
 
   errMessage:string
+  
   educational(){
     /*for(var items in this.mentor){
       //console.log(this.mentor[k])
       console.log(items,' ',this.mentor[items])
       this.mentor2[items] = this.mentor[items];
       
-    }
-    console.log(this.mentor2)*/
+    }*/
+    console.log(this.mentor.disability)
 
     if(this.mentor.surname != '' && this.mentor.fullName != '' && this.mentor.cellNo != ''
       && this.mentor.disability != '' && this.mentor.email != '' && this.mentor.gender != ''
       && this.mentor.dob != '' && this.mentor.reAddress != ''){
-        
         const getValues: NavigationExtras = {
           state: {
             values: this.mentor
           }
         };
         console.log(getValues)
-        this._router.navigate(['/mentor-educational-info'], getValues)
+        if(this.mentor.disability =='yes'){
+          if(this.mentor.disabilityInfo == ''){
+            
+          }
+          else{
+          this._router.navigate(['/mentor-educational-info'], getValues)            
+          }
+        }
+
+        else{
+        this._router.navigate(['/mentor-educational-info'], getValues)                      
+        }
+        
+        
         
     }
 

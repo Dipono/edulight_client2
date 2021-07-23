@@ -32,7 +32,7 @@
 		<div class="form-group" [class.has-error]="dob.invalid && dob.touched">
 			<label for="dob"class="control-label">Date of Birth <span class="required">*</span></label>
 			<input type="date" id="dob" [(ngModel)]="mentor.dob" name="mentor.dob" 
-			class="control-form" placeholder="Date" required #dob="ngModel">
+			class="control-form date-of-birth" placeholder="Date" required #dob="ngModel">
 			<span class="help-block" *ngIf="dob.invalid && dob.touched">
 				Date of Birth is required
 			</span>

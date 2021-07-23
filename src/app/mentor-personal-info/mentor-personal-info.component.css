@@ -104,3 +104,6 @@ progress[value]{
     font-size: 1.2em;
 }
 
+@media screen and (max-width: 780px){
+    max-width: 100%;
+}
