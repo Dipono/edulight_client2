@@ -1069,29 +1069,25 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_
     }
     exports.AppComponent = AppComponent;
     AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(); };
-    AppComponent.ɵcmp = i0.ɵɵdefineComponent({ type: AppComponent, selectors: [["app-root"]], decls: 14, vars: 0, consts: [[1, "myBody"], [1, "logo"], ["href", ""], ["src", "/assets/favicon.png", "width", "90", "height", "90", "alt", "", 1, "image"], [1, "name"], [1, "company"], [1, "slogan"], [1, "myFooter"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
+    AppComponent.ɵcmp = i0.ɵɵdefineComponent({ type: AppComponent, selectors: [["app-root"]], decls: 12, vars: 0, consts: [[1, "myBody"], [1, "logo"], [1, "name"], [1, "company"], [1, "slogan"], [1, "myFooter"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
             i0.ɵɵelementStart(0, "body");
             i0.ɵɵelementStart(1, "div", 0);
-            i0.ɵɵelementStart(2, "div", 1);
-            i0.ɵɵelementStart(3, "a", 2);
-            i0.ɵɵelement(4, "img", 3);
+            i0.ɵɵelement(2, "div", 1);
+            i0.ɵɵelementStart(3, "div", 2);
+            i0.ɵɵelementStart(4, "div", 3);
+            i0.ɵɵelementStart(5, "h3");
+            i0.ɵɵtext(6, "EDULIGHT ACADEMIA");
             i0.ɵɵelementEnd();
             i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(5, "div", 4);
-            i0.ɵɵelementStart(6, "div", 5);
-            i0.ɵɵelementStart(7, "h3");
-            i0.ɵɵtext(8, "EDULIGHT ACADEMIA");
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(9, "div", 6);
-            i0.ɵɵelementStart(10, "p");
-            i0.ɵɵtext(11, "SHAPING THE FUTURE OF YOUNG ASPIRING PROFESSIONALS");
+            i0.ɵɵelementStart(7, "div", 4);
+            i0.ɵɵelementStart(8, "p");
+            i0.ɵɵtext(9, "SHAPING THE FUTURE OF YOUNG ASPIRING PROFESSIONALS");
             i0.ɵɵelementEnd();
             i0.ɵɵelementEnd();
             i0.ɵɵelementEnd();
             i0.ɵɵelementEnd();
-            i0.ɵɵelementStart(12, "div", 7);
-            i0.ɵɵelement(13, "router-outlet");
+            i0.ɵɵelementStart(10, "div", 5);
+            i0.ɵɵelement(11, "router-outlet");
             i0.ɵɵelementEnd();
             i0.ɵɵelementEnd();
         } }, directives: [i1.RouterOutlet], styles: ["body[_ngcontent-%COMP%]{\r\n    margin: 15px;\r\n}\r\n.myBody[_ngcontent-%COMP%]{\r\n    display: flex;\r\n    \r\n}\r\nimg[_ngcontent-%COMP%]{\r\n    padding: 7px;\r\n    border-radius: 50%;\r\n}\r\n.name[_ngcontent-%COMP%]{\r\n    margin-top: 10px;\r\n}\r\n.company[_ngcontent-%COMP%]{\r\n    height: 35px;\r\n    width: 100%;\r\n}\r\nh3[_ngcontent-%COMP%]{\r\n    margin-top:10px\r\n}\r\n.company[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%]{\r\n    margin-left: 5px;\r\n    margin-top: 5px;\r\n    font-size: 1em;\r\n    font-weight: 600;\r\n}\r\n.slogan[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{\r\n    margin-bottom: 15px;\r\n    font-size: 0.8em;\r\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksWUFBWTtBQUNoQjtBQUNBO0lBQ0ksYUFBYTs7QUFFakI7QUFFQTtJQUNJLFlBQVk7SUFDWixrQkFBa0I7QUFDdEI7QUFFQTtJQUNJLGdCQUFnQjtBQUNwQjtBQUVBO0lBQ0ksWUFBWTtJQUNaLFdBQVc7QUFDZjtBQUNBO0lBQ0k7QUFDSjtBQUNBO0lBQ0ksZ0JBQWdCO0lBQ2hCLGVBQWU7SUFDZixjQUFjO0lBQ2QsZ0JBQWdCO0FBQ3BCO0FBRUE7SUFDSSxtQkFBbUI7SUFDbkIsZ0JBQWdCO0FBQ3BCO0FBR0E7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7RUF3Q0UiLCJmaWxlIjoiYXBwLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJib2R5e1xyXG4gICAgbWFyZ2luOiAxNXB4O1xyXG59XHJcbi5teUJvZHl7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgXHJcbn1cclxuXHJcbmltZ3tcclxuICAgIHBhZGRpbmc6IDdweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcclxufVxyXG5cclxuLm5hbWV7XHJcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xyXG59XHJcblxyXG4uY29tcGFueXtcclxuICAgIGhlaWdodDogMzVweDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG59XHJcbmgze1xyXG4gICAgbWFyZ2luLXRvcDoxMHB4XHJcbn1cclxuLmNvbXBhbnkgaDN7XHJcbiAgICBtYXJnaW4tbGVmdDogNXB4O1xyXG4gICAgbWFyZ2luLXRvcDogNXB4O1xyXG4gICAgZm9udC1zaXplOiAxZW07XHJcbiAgICBmb250LXdlaWdodDogNjAwO1xyXG59XHJcblxyXG4uc2xvZ2FuIHB7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAxNXB4O1xyXG4gICAgZm9udC1zaXplOiAwLjhlbTtcclxufVxyXG5cclxuXHJcbi8qXHJcbi5uYW1le1xyXG4gICAgbWFyZ2luLWxlZnQ6IDEwcHg7XHJcbn1cclxuXHJcbi5mb3JtLWdyb3Vwe1xyXG4gICAgbWFyZ2luLWxlZnQ6IDEwcHg7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAxMHB4O1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG59XHJcblxyXG4uZm9ybS1ncm91cCAubG9nb3tcclxuICAgIGJvcmRlcjogMnB4IHNvbGlkIGJsYWNrO1xyXG4gICAgcGFkZGluZzogN3B4O1xyXG4gICAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG59XHJcblxyXG4ubG9nbyAuaW1hZ2V7XHJcbiAgICBtYXJnaW4tdG9wOiA1cHg7XHJcbiAgICBtYXJnaW4tbGVmdDogNHB4O1xyXG59XHJcblxyXG4uY29tcGFueXtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xyXG4gICAgd2lkdGg6IDMwMCVcclxufVxyXG5cclxuLmZvcm0tZ3JvdXAgLm5hbWUgaDN7XHJcbiAgICBtYXJnaW4tbGVmdDogNXB4O1xyXG4gICAgY29sb3I6IHdoaXRlO1xyXG59XHJcblxyXG5cclxuXHJcblxyXG4ubmFtZSAuc2xvZ2Fue1xyXG4gICAgY29sb3I6IGJsYWNrO1xyXG4gICAgbWFyZ2luLWJvdHRvbTogNXB4O1xyXG5cclxufSovIl19 */"] });
