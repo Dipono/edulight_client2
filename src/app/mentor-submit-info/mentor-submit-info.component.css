@@ -49,6 +49,11 @@ h3,p,label,input{
     text-align: center;
 }
 
+img{
+    width: 100%;
+    height: 100vh;
+}
+
 input{
     border-top: hidden;
     border-left: hidden;

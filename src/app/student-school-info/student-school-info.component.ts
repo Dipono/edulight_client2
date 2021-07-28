@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentSchoolInfoComponent implements OnInit {
 
+  mygrade=[8,9,10,11,12]
   constructor() { }
 
   ngOnInit(): void {

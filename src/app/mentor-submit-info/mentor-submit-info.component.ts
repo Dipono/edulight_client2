@@ -23,7 +23,7 @@ export class MentorSubmitInfoComponent implements OnInit {
   }
 
   successfully(){
-    console.log('Submitted Successfully................')
+    
     this._router.navigate(['/mentor-successfully'])
   }
 
