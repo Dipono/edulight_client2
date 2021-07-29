@@ -1,9 +1,16 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RegisterService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  registerMentor(body: any){
+    return this.http.post('https://edulight-server.herokuapp.com/registerMentor', body, {
+      observe: 'body'
+    });
+  }
 }

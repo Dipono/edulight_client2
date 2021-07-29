@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { HttpClientModule } from '@angular/common/http';
+
+import { RegisterService } from './register.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -15,6 +18,7 @@ import { MentorEducationalInfoComponent } from './mentor-educational-info/mentor
 import { MentorSubmitInfoComponent } from './mentor-submit-info/mentor-submit-info.component';
 import { MentorSuccessfullyComponent } from './mentor-successfully/mentor-successfully.component';
 import { MentorBackgroundInfoComponent } from './mentor-background-info/mentor-background-info.component';
+import { NextOfKeenComponent } from './next-of-keen/next-of-keen.component';
 
 @NgModule({
   declarations: [
@@ -27,11 +31,13 @@ import { MentorBackgroundInfoComponent } from './mentor-background-info/mentor-b
     MentorEducationalInfoComponent,
     MentorSubmitInfoComponent,
     MentorSuccessfullyComponent,
-    MentorBackgroundInfoComponent
+    MentorBackgroundInfoComponent,
+    NextOfKeenComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
       {path: '', component:HomeComponent},
@@ -43,13 +49,11 @@ import { MentorBackgroundInfoComponent } from './mentor-background-info/mentor-b
       {path: 'mentor-background-info', component:MentorBackgroundInfoComponent},
       {path: 'mentor-submit-info', component:MentorSubmitInfoComponent},
       {path: 'mentor-successfully', component:MentorSuccessfullyComponent}
-      
-      
     ]),
     BrowserAnimationsModule,
     NgbModule
   ],
-  providers: [],
+  providers: [RegisterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
