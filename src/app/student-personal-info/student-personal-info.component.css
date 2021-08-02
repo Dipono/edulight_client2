@@ -34,15 +34,6 @@ h3,p,label,input{
     margin-left: 2%;
 }
 
-
-/*.header .form-group{
-    display: flex;
-    flex-direction: column;
-    flex-direction: column;
-    border: 1px solid grey;
-    border-radius: 5px;
-}*/
-
 .header .form-group h3{
     font-size: 1.5em;
     text-align: center;
@@ -65,15 +56,7 @@ input:focus{
 .town{
     display: flex;
 }
-*/
-/*
-.main .form-group{
-    display: flex;
-    flex-direction: column;
-    border: 1px solid grey;
-    border-radius: 5px;
-    margin-top: 25px;
-}*/
+
 /*
 .main input{
     margin-top: 10px;
@@ -88,42 +71,10 @@ progress[value]{
     height: 20px;
 }
 
-.header .form-group {
-    border: 1px solid grey;
-    border-top: 8px solid green;
-    border-radius: 5px;
-}
-
-.footer .form-btn{
-    width: 80px;
-    height: 30px;
-    color: white;
-    background-color: green;
-    font-weight: 500;
-    margin-top: 15px;
-    margin-left: 15px;
-    border-radius: 5px;
-}
-
-.back-btn{
-    width: 80px;
-    height: 30px;
-    color: green;
-    font-weight: 500;
-    margin-top: 15px;
-    border-radius: 5px;
-}
-
 .help-block{
     color: red;
     margin-left: 15px;
 }
-
-.myRadio{
-    display: flex;
-    flex-direction: column;
-}
-
 
 .ng-valid[required], .ng-valid.required{
     border-bottom: green 2px solid;
