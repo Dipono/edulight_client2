@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http';
 //import { MatCarouseModule } from '@angular/platform-browser/animations'
-
+lsdfghjk
 import { RegisterService } from './register.service';
 
 import { AppComponent } from './app.component';

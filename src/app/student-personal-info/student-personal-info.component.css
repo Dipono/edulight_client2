@@ -57,14 +57,16 @@ input:focus{
     display: flex;
 }
 
+.footer{
+    margin-top: 15px;
+}
+
 /*
 .main input{
     margin-top: 10px;
 }
 
-.footer{
-    margin-top: 15px;
-}
+
 
 progress[value]{
     width: 250px;
