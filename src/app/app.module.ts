@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 //import { MatCarouseModule } from '@angular/platform-browser/animations'
 
 import { RegisterService } from './register.service';
-
+ 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterRoleComponent } from './register-role/register-role.component';
