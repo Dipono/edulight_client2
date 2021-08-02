@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,14 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private _router:Router) { }
+  showNavigationArrows = false;
+  showNavigationIndicators = false;
+  images = [1055, 194, 368].map((n) => `https://picsum.photos/id/${n}/900/500`);
+
+  constructor(private _router:Router, config: NgbCarouselConfig) {
+    config.showNavigationArrows = true;
+    config.showNavigationIndicators = true;
+   }
 
   ngOnInit(): void {
   }

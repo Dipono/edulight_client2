@@ -2,9 +2,18 @@ body{
     margin: 15px;
 }
 
-.required{
-    margin-top: 5px;
-    color: red;
+.intro{
+    margin-top:10px;
+    margin-left: 10px;
+    color:white;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin-top: 25px;
 }
 
 .header .form-group {
@@ -13,15 +22,13 @@ body{
     border-radius: 5px;
 }
 
-.form-group{
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-    margin-top: 25px;
+.main p{
+    margin: 3px;
+    padding-bottom: 8px;
+    padding-top: 8px;
 }
-
 .main .form-group .header{
-    height: 50px;
+    height: 35px;
     background-color: green;
 
 }
@@ -48,6 +55,11 @@ h3,p,label,input{
     text-align: center;
 }
 
+img{
+    width: 100%;
+    height: 100vh;
+}
+
 input{
     border-top: hidden;
     border-left: hidden;
@@ -59,13 +71,15 @@ input:focus{
     outline: none
 }
 
+.required{
+    margin-top: 5px;
+    color: red;
+}
+
 .main{
     margin-top: 10px;
 }
-.town{
-    display: flex;
-}
-*/
+
 /*
 .main .form-group{
     display: flex;
@@ -74,7 +88,6 @@ input:focus{
     border-radius: 5px;
     margin-top: 25px;
 }*/
-/*
 .main input{
     margin-top: 10px;
 }
@@ -86,12 +99,6 @@ input:focus{
 progress[value]{
     width: 250px;
     height: 20px;
-}
-
-.header .form-group {
-    border: 1px solid grey;
-    border-top: 8px solid green;
-    border-radius: 5px;
 }
 
 .footer .form-btn{
@@ -114,57 +121,9 @@ progress[value]{
     border-radius: 5px;
 }
 
-.help-block{
-    color: red;
-    margin-left: 15px;
+@media screen and (max-width:750px){
+    img{
+        width: 100%;
+        height: 50vh;
+    }
 }
-
-.myRadio{
-    display: flex;
-    flex-direction: column;
-}
-
-
-.ng-valid[required], .ng-valid.required{
-    border-bottom: green 2px solid;
-}
-
-.errMessage{
-    color: red;
-    font-size: 1.2em;
-}
-*/
-element.style {
-    width: 80px;
-    height: 30px;
-    color: white;
-    background-color: green;
-    font-weight: 500;
-    margin-top: 15px;
-    margin-left: 15px;
-    border-radius: 5px;
-}
-.footer .form-btn{
-    width: 80px;
-    height: 30px;
-    color: white;
-    background-color: green;
-    font-weight: 500;
-    margin-top: 15px;
-    margin-left: 15px;
-    border-radius: 5px;
-}
-
-.footer{
-    margin-top:10px;
-}
-
-.myRadio{
-    display: flex;
-    flex-direction: column;
-}
-
-.myRadio span{
-    margin-left: 10px;
-}
-

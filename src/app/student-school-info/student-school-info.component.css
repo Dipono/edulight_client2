@@ -2,11 +2,115 @@ body{
     margin: 15px;
 }
 
+.intro{
+    margin-top:10px;
+    margin-left: 10px;
+    color:white;
+}
+
 .required{
     margin-top: 5px;
     color: red;
 }
 
+.header .form-group {
+    border: 1px solid grey;
+    border-top: 8px solid green;
+    border-radius: 5px;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    margin-top: 25px;
+}
+
+.header span{
+    margin-left: 2%;
+}
+
+.main .form-group .header{
+    height: 50px;
+    background-color: green;
+}
+
+.header .form-group h3{
+    font-size: 1.5em;
+    text-align: center;
+}
+
+h3,p,label,input{
+    margin-left: 2%;
+}
+
+input{
+    border-top: hidden;
+    border-left: hidden;
+    border-radius: hidden;
+    border-bottom: groove;
+}
+
+input:focus{
+    outline: none
+}
+
+.main{
+    margin-top: 10px;
+}
+
+.otherSubj{
+    display: flex;
+}
+.addSubject{
+    margin-left: 2%;
+    width: 100px;    
+}
+
+.footer .form-btn{
+    width: 80px;
+    height: 30px;
+    color: white;
+    background-color: green;
+    font-weight: 500;
+    margin-top: 15px;
+    margin-left: 15px;
+    border-radius: 5px;
+}
+
+.back-btn{
+    width: 80px;
+    height: 30px;
+    color: green;
+    font-weight: 500;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.footer{
+    margin-top:10px;
+}
+
+.myRadio{
+    display: flex;
+    flex-direction: column;
+}
+
+.myRadio span{
+    margin-left: 10px;
+}
+
+fieldset{
+    margin-top:25px;
+}
+
+.strAdded{
+    color:green
+}
+
+
+
+/*
 .header .form-group h3{
     font-size: 1.5em;
     text-align: center;
@@ -109,4 +213,4 @@ progress[value]{
 
 .myRadio span{
     margin-left: 10px;
-}
+}*/

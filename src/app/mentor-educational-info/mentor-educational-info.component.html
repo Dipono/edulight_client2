@@ -50,13 +50,13 @@
 			<label>Level of study <span class="required">*</span></label>
 			<div class="myRadio">
 			<label><input type="radio" [(ngModel)]="mentorEducation.studyLevel" name="mentorEducation.studyLevel" 
-			value="1st Year" class="control-form" required #studyLevel="ngModel">1st year</label>
+			value="1st Year" class="control-form" required #studyLevel="ngModel"><span>1st year</span></label>
 			<label><input type="radio" [(ngModel)]="mentorEducation.studyLevel" name="mentorEducation.studyLevel" 
-			value="2nd Year" class="control-form" required #studyLevel="ngModel">2nd years</label>
+			value="2nd Year" class="control-form" required #studyLevel="ngModel"><span>2nd year</span></label>
 			<label><input type="radio" [(ngModel)]="mentorEducation.studyLevel" name="mentorEducation.studyLevel" 
-			value="3rd Year" class="control-form" required #studyLevel="ngModel">3rd years</label>
+			value="3rd Year" class="control-form" required #studyLevel="ngModel"><span>3rd year</span></label>
 			<label><input type="radio" [(ngModel)]="mentorEducation.studyLevel" name="mentorEducation.studyLevel" 
-			value="other Level" class="control-form" required #studyLevel="ngModel">3+ years</label>
+			value="other Level" class="control-form" required #studyLevel="ngModel"><span>3+ years</span></label>
 			</div>
 			<span class="help-block" *ngIf="studyLevel.invalid && studyLevel.touched" >
 				Level of study is required
@@ -72,9 +72,9 @@
 			<label>Are/were you a member of any student organization <span class="required">*</span></label>
 			<div class="myRadio">
 				<label><input type="radio" [(ngModel)]="mentorEducation.organization" name="mentorEducation.organization" 
-				value="yes" class="control-form" required #organization="ngModel">Yes</label>
+				value="yes" class="control-form" required #organization="ngModel"><span>Yes</span></label>
 				<label><input type="radio" [(ngModel)]="mentorEducation.organization" name="mentorEducation.organization" 
-				value="no" class="control-form" required #organization="ngModel">No</label>
+				value="no" class="control-form" required #organization="ngModel"><span>No</span></label>
 			</div>
 			<span class="help-block" *ngIf="organization.invalid && organization.touched" >
 				This field is required

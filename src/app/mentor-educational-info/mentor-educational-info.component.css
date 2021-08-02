@@ -124,3 +124,7 @@ progress[value]{
     color: red;
     font-size: 1.2em;
 }
+
+.myRadio span{
+    margin-left: 10px;
+}

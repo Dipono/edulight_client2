@@ -8,12 +8,34 @@ import { Router } from '@angular/router';
 })
 export class StudentPersonalInfoComponent implements OnInit {
 
+  mentee={
+    stud_id:'',
+    names:'',
+    surname:'',	
+    gender:'',	
+    phone_Number:'',
+    alt_Phone_Number:'',	
+    email:'',
+    streetNo:'',	
+    town:'',	
+    city:'',
+    code:'',	
+    province:'',
+    disability:'',
+    disabilityDesc:'',
+    medicalCondition:'',
+    persType:''
+  }
+
   constructor(private _router:Router) { }
 
   ngOnInit(): void {
+    window.scrollTo(0,0)    
+    
   }
 
   moveToSchool(){
+    console.log(this.mentee)
     this._router.navigate(['/student-school-info'])
   }
 

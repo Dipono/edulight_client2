@@ -5,92 +5,94 @@
 			<span class="required">*Required</span>
 		</div>
 	</div>
-
+	
 	<div class="main">
 		<div class="form-group">
-			<span class="header"><label class="intro">Academic and professional background</label></span>
-			<label for="persType"class="control-label">Personality type (the results from the personality test you took before hand) 
-			<span class="required">*</span></label>			
-			<input type="text" id="persType" name="" 
-			class="control-form" placeholder="Your answer" required>
-			<!--<span class="help-block" *ngIf="persType.invalid && persType.touched">
-				Personality type is required
-			</span>-->
+			<span class="header"><label class="intro">Academic background</label></span>
 		</div>
 
-        <div class="form-group" >
-			<label>Grade <span class="required">*</span></label>
-			<div class="myRadio">
-				<label><input type="radio" name="grade" 
-				value="10" class="control-form" required ><span>10</span></label>
-				<label><input type="radio" name="grade" 
-				value="11" class="control-form" required ><span>11</span></label>
+        <fieldset>
+			<legend>High/Secondary School</legend>
+			<div class="form-group" >
+				<label>Grade <span class="required">*</span></label>
+				<div class="myRadio">
+					<label><input type="radio" required name="school.grade" [(ngModel)]="school.grade" 
+					value="10" class="control-form" ><span>Grade 10</span></label>
+					<label><input type="radio" required name="school.grade" [(ngModel)]="school.grade" 
+					value="11" class="control-form"  ><span>Grade 11</span></label>
+				</div>
 			</div>
-        </div>
 
-        <div class="form-group" >
-			<label>Core subjects (check all that is applicable to you and type other not listed) <span class="required">*</span></label>
-			<div class="myRadio" *ngFor="let sub of subject">
-				<label><input type="checkbox" name="grade"  [value]="sub.subjName" 
-				 class="control-form" required ><span>{{sub.subjName}}</span></label>
+			<div class="form-group" >
+				<label>Core subjects (check all that is applicable to you and type other not listed) <span class="required">*</span></label>
+				<div class="myRadio" *ngFor="let sub of subject" >
+					<label><input type="checkbox" id="sub.subjNam" name="{{sub.subjNam}}" [value]="sub.subjName"
+					class="control-form" (change)="selectSubject()" [(ngModel)]="sub.isChecked">{{sub.subjName}}</label>
+				</div>
+				<!--<span class="help-block" *ngIf="organization.invalid && organization.touched" >
+					This field is required
+				</span>-->
+				
 			</div>
-			<!--<span class="help-block" *ngIf="organization.invalid && organization.touched" >
-				This field is required
-			</span>-->
 			
-		</div>
+				<div class="form-group">
+					<label for="otherSubj"class="control-label">Other subjects not listed</label>			
+					<div class="otherSubj">
+						<input type="text" id="otherSubj" name="otherSubj" [(ngModel)]="otherSubj"  
+						placeholder="Your answer" required class="form-control"> 
+						<button class="addSubject" (click)="addSubject()">Add</button>
+					</div>
+					<span class="strAdded">
+						{{strAdded}}
+					</span>
+			</div>
+		</fieldset>
 
-		<div class="form-group">
-			<label for="otherSubj"class="control-label">Other subjects not listed</label>			
-			<input type="text" id="otherSubj" name="otherSubj" 
-			class="control-form" placeholder="Your answer" required> 
-            <button class="addSubject">Add</button>
-			<!--<span class="help-block" *ngIf="persType.invalid && persType.touched">
-				Personality type is required
-			</span>-->
-		</div>
+		<fieldset>
+			<legend>Tertiary Institution</legend>
+			<div class="form-group">
+				<label for="fir_Course_Name"class="control-label">Desire tertiary qualification/Study fieild
+				<span class="required">*</span></label>			
+				<input type="text" id="fir_Course_Name" name="fir_Course_Name" [(ngModel)]="fir_Course_Name"
+				placeholder="Your answer" required class="form-control">
+				<!--<span class="help-block" *ngIf="persType.invalid && persType.touched">
+					Personality type is required
+				</span>-->
+			</div>
 
-		<div class="form-group">
-			<label for=""class="control-label">Desire tertiary qualification/Study fieild
-            <span class="required">*</span></label>			
-			<input type="text" id="otherSubj" name="otherSubj" 
-			class="control-form" placeholder="Your answer" required>
-			<!--<span class="help-block" *ngIf="persType.invalid && persType.touched">
-				Personality type is required
-			</span>-->
-		</div>
+			<div class="form-group">
+				<label for="sec_Course_Name"class="control-label">2nd desire tertiary qualification/Study fieild</label>			
+				<input type="text" id="sec_Course_Name" name="sec_Course_Name" [(ngModel)]="sec_Course_Name"
+				placeholder="Your answer" required class="form-control">
+				<!--<span class="help-block" *ngIf="persType.invalid && persType.touched">
+					Personality type is required
+				</span>-->
+			</div>
 
-		<div class="form-group">
-			<label for=""class="control-label">2nd desire tertiary qualification/Study fieild</label>			
-			<input type="text" id="otherSubj" name="otherSubj" 
-			class="control-form" placeholder="Your answer" required>
-			<!--<span class="help-block" *ngIf="persType.invalid && persType.touched">
-				Personality type is required
-			</span>-->
-		</div>
+			<div class="form-group">
+				<label for="fir_Tert_Name"class="control-label">Desire Institution <span class="required">*</span></label>			
+				<input type="text"  id="fir_Tert_Name" name="fir_Tert_Name" [(ngModel)]="fir_Tert_Name" 
+				placeholder="Your answer" required class="form-control">
+				<!--<span class="help-block" *ngIf="persType.invalid && persType.touched">
+					Personality type is required
+				</span>-->
+			</div>
+
+			<div class="form-group">
+				<label for="sec_Tert_Name"class="control-label">2nd desire Institution</label>			
+				<input type="text" id="sec_Tert_Name" name="sec_Tert_Name" [(ngModel)]="sec_Tert_Name" 
+				placeholder="Your answer" required class="form-control">
+				<!--<span class="help-block" *ngIf="persType.invalid && persType.touched">
+					Personality type is required
+				</span>-->
+			</div>
+		</fieldset>
+		
 
         <div class="form-group">
-			<label for=""class="control-label">Desire Institution <span class="required">*</span></label>			
-			<input type="text" id="otherSubj" name="otherSubj" 
-			class="control-form" placeholder="Your answer" required>
-			<!--<span class="help-block" *ngIf="persType.invalid && persType.touched">
-				Personality type is required
-			</span>-->
-		</div>
-
-        <div class="form-group">
-			<label for=""class="control-label">2nd desire Institution</label>			
-			<input type="text" id="otherSubj" name="otherSubj" 
-			class="control-form" placeholder="Your answer" required>
-			<!--<span class="help-block" *ngIf="persType.invalid && persType.touched">
-				Personality type is required
-			</span>-->
-		</div>
-
-        <div class="form-group">
-			<label for=""class="control-label">Please desclose any academic awards or special achievement</label>			
-			<input type="text" id="otherSubj" name="otherSubj" 
-			class="control-form" placeholder="Your answer" required>
+			<label for="award"class="control-label">Please desclose any academic awards or special achievement</label>			
+			<input type="text" id="award" name="school.award" [(ngModel)]="school.award"
+			class="control-form" placeholder="Your answer" required class="form-control">
 			<!--<span class="help-block" *ngIf="persType.invalid && persType.touched">
 				Personality type is required
 			</span>-->
@@ -117,8 +119,8 @@
 			</span>-->
 
 			<div class="form-button">
-				<button class="back-btn" >Back</button>				
-				<button class="form-btn" >Next</button>
+				<button class="back-btn" (click)="personalInfo()">Back</button>				
+				<button class="form-btn" (click)="emergencyContact()">Next</button>
 			</div>
 
         <div class="ending">

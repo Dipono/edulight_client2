@@ -19,6 +19,7 @@ export class MentorSubmitInfoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    window.scrollTo(0,0)
   }
 
   successfully(){

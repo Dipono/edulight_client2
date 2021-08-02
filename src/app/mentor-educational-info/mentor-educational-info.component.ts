@@ -33,6 +33,7 @@ export class MentorEducationalInfoComponent implements OnInit {
   }
   
   ngOnInit(): void {
+    window.scrollTo(0,0)
   }
   errMessage:string
   

@@ -51,11 +51,11 @@
 			<label>Gender <span class="required">*</span></label>
 			<div class="myRadio">
 				<label><input type="radio" required #gender="ngModel" [(ngModel)]="mentor.gender" 
-			name="mentor.gender" value="Female" class="control-form">Female</label>
+			name="mentor.gender" value="Female" class="control-form"><span>Female</span></label>
 			<label><input type="radio" required #gender="ngModel" [(ngModel)]="mentor.gender" 
-			name="mentor.gender" value="Male" class="control-form">Male</label>
+			name="mentor.gender" value="Male" class="control-form"><span>Male</span></label>
 			<label><input type="radio" required #gender="ngModel" [(ngModel)]="mentor.gender" 
-			name="mentor.gender" value="Other" class="control-form">Other</label>
+			name="mentor.gender" value="Other" class="control-form"><span>Other</span></label>
 			</div>
 			<span class="help-block" *ngIf="gender.invalid && gender.touched">
 				Gender is required
@@ -105,9 +105,9 @@
 			<label>Are you a Person Living with a Disability <span class="required">*</span></label>
 			<div class="myRadio">
 				<label><input type="radio" required #disability="ngModel" [(ngModel)]="mentor.disability" 
-				name="mentor.disability" value="yes" class="control-form">Yes</label>
+				name="mentor.disability" value="yes" class="control-form"><span>Yes</span></label>
 				<label><input type="radio" required #disability="ngModel" [(ngModel)]="mentor.disability" 
-				name="mentor.disability" value="no" class="control-form">No</label>
+				name="mentor.disability" value="no" class="control-form"><span>No</span></label>
 			</div>
 			<span class="help-block" *ngIf="disability.invalid && disability.touched">
 				This field is required
@@ -129,12 +129,12 @@
 		</div>
 
 		<div class="form-group">
-			<label>Twitter Handler</label>
+			<label>Twitter Handle</label>
 			<input type="text" [(ngModel)]="mentor.twitter" name="mentor.twitter" class="control-form" placeholder="Your answer">
 		</div>
 
 		<div class="form-group">
-			<label>Instagram Handler</label>
+			<label>Instagram Handle</label>
 			<input type="text" [(ngModel)]="mentor.instagram" name="mentor.instagram" class="control-form" placeholder="Your answer">
 		</div>
 

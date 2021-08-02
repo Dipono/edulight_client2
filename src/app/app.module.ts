@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http';
+//import { MatCarouseModule } from '@angular/platform-browser/animations'
 
 import { RegisterService } from './register.service';
 
@@ -19,7 +20,8 @@ import { MentorSubmitInfoComponent } from './mentor-submit-info/mentor-submit-in
 import { MentorSuccessfullyComponent } from './mentor-successfully/mentor-successfully.component';
 import { MentorBackgroundInfoComponent } from './mentor-background-info/mentor-background-info.component';
 import { NextOfKeenComponent } from './next-of-keen/next-of-keen.component';
-
+import { MenteeSubmitInfoComponent } from './mentee-submit-info/mentee-submit-info.component';
+//const routes:Routes
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,8 @@ import { NextOfKeenComponent } from './next-of-keen/next-of-keen.component';
     MentorSubmitInfoComponent,
     MentorSuccessfullyComponent,
     MentorBackgroundInfoComponent,
-    NextOfKeenComponent
+    NextOfKeenComponent,
+    MenteeSubmitInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +43,7 @@ import { NextOfKeenComponent } from './next-of-keen/next-of-keen.component';
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
+      //routes,{scrollPositionRestoration: 'enable'},
       {path: '', component:HomeComponent},
       {path: 'selectrole', component:RegisterRoleComponent},
       {path: 'student-personal-info', component:StudentPersonalInfoComponent},
@@ -48,7 +52,11 @@ import { NextOfKeenComponent } from './next-of-keen/next-of-keen.component';
       {path: 'mentor-educational-info', component:MentorEducationalInfoComponent},
       {path: 'mentor-background-info', component:MentorBackgroundInfoComponent},
       {path: 'mentor-submit-info', component:MentorSubmitInfoComponent},
-      {path: 'mentor-successfully', component:MentorSuccessfullyComponent}
+      {path: 'mentor-successfully', component:MentorSuccessfullyComponent},
+      {path: 'next-of-kin', component:NextOfKeenComponent},//
+      {path: 'mentee-submit-info', component:MenteeSubmitInfoComponent}
+
+      
     ]),
     BrowserAnimationsModule,
     NgbModule

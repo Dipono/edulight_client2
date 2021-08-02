@@ -103,7 +103,10 @@ progress[value]{
     color: red;
     font-size: 1.2em;
 }
-
+.myRadio span{
+    margin-left: 10px;
+}
+/*
 @media screen and (max-width: 780px){
     max-width: 100%;
-}
+}*/

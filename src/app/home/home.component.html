@@ -1,12 +1,23 @@
 
 <body>
    <div class="head-content">
-       	    <ul class="nav-head">
-	            <li> <a [routerLink]="['/student-personal-info']"> Student </a> </li>
-	            <li> <a disabled [routerLink]="['/mentor-personal-info']">Mentor </a> </li>
+		<ul class="nav-head">
+			<li> <a [routerLink]="['/student-personal-info']"> Student </a> </li>
+			<li> <a disabled [routerLink]="['/mentor-personal-info']">Mentor </a> </li>
         </ul>
-       </div>
+    </div>
 
+	<div class="main">
+		<ngb-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+			<ng-template ngbSlide *ngFor="let image of images">
+				<div class="picsum-img-wrapper">
+				<img [src]="image" alt="Random slide">
+				</div>
+				<div class="carousel-caption">
+				</div>
+			</ng-template>
+		</ngb-carousel>
+	</div>
 	<div class="footer">
 		<p>&copy; Edulight 2021</p>
 	</div>

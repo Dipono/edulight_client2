@@ -82,13 +82,13 @@
 		<div class="main">
 		<div class="form-group" [class.has-error]="criminalRec.invalid && criminalRec.touched">
 			<span class="header"><label class="intro">Few more questions and we're done</label></span>
-			<label>have you ever been implecated in any criminal offense or faced any criminal charges? 
+			<label>have you ever been implicated in any criminal offense or faced any criminal charges? 
 			<span class="required">*</span></label>			
 			<div class="myRadio">
 				<label><input type="radio" [(ngModel)]="backgrnd.criminalRec" name="backgrnd.criminalRec" 
-				value="yes" class="control-form" required #criminalRec="ngModel">Yes</label>
+				value="yes" class="control-form" required #criminalRec="ngModel"><span>Yes</span></label>
 				<label><input type="radio" [(ngModel)]="backgrnd.criminalRec" name="backgrnd.criminalRec" 
-				value="no" class="control-form" required #criminalRec="ngModel">No</label>
+				value="no" class="control-form" required #criminalRec="ngModel"><span>No</span></label>
 			</div>
 			<span class="help-block" *ngIf="criminalRec.invalid && criminalRec.touched" >
 				This field is required
@@ -96,12 +96,12 @@
 		</div>
 
 		<div class="form-group" [class.has-error]="mentor.invalid && mentor.touched">
-			<label>have you mentor anyone before? <span class="required">*</span></label>
+			<label>have you mentored anyone before? <span class="required">*</span></label>
 			<div class="myRadio">
 				<label><input type="radio" [(ngModel)]="backgrnd.mentor" name="backgrnd.mentor" value="yes" 
-				class="control-form" required #mentor="ngModel">Yes</label>
+				class="control-form" required #mentor="ngModel"><span>Yes</span></label>
 				<label><input type="radio" [(ngModel)]="backgrnd.mentor" name="backgrnd.mentor" value="no" 
-				class="control-form" required #mentor="ngModel">No</label>
+				class="control-form" required #mentor="ngModel"><span>No</span></label>
 			</div>		
 			<span class="help-block" *ngIf="mentor.invalid && mentor.touched" >
 				This field is required
@@ -113,9 +113,9 @@
 			<label>have you worked with pupils before? <span class="required">*</span></label>						
 			<div class="myRadio">
 				<label><input type="radio" [(ngModel)]="backgrnd.workPupil" name="backgrnd.workPupil" value="yes" 
-				class="control-form" required #workPupil="ngModel">Yes</label>
+				class="control-form" required #workPupil="ngModel"><span>Yes</span></label>
 				<label><input type="radio" [(ngModel)]="backgrnd.workPupil" name="backgrnd.workPupil" value="no" 
-				class="control-form" required #workPupil="ngModel">No</label>
+				class="control-form" required #workPupil="ngModel"><span>No</span></label>
 			</div>
 			<span class="help-block" *ngIf="workPupil.invalid && workPupil.touched" >
 				This field is required
@@ -128,27 +128,27 @@
 			<label class="rateMess"><b>Not so confident</b></label>
 			<div class="mentorRate">
 				<div class="skill">
-					<label class="rateNo">1</label>
+					<label class="rateNo"><span>1</span></label>
 					<input type="radio" [(ngModel)]="backgrnd.mentorSkills" name="backgrnd.mentorSkills" 
 					value="1" required #mentorSkills="ngModel">
 				</div>	
 				<div class="skill">
-					<label class="rateNo">2</label>
+					<label class="rateNo"><span>2</span></label>
 					<input type="radio" [(ngModel)]="backgrnd.mentorSkills" name="backgrnd.mentorSkills" 
 					value="2" required #mentorSkills="ngModel">
 				</div>
 				<div class="skill">
-					<label class="rateNo">3</label>
+					<label class="rateNo"><span>3</span></label>
 					<input type="radio" [(ngModel)]="backgrnd.mentorSkills" name="backgrnd.mentorSkills" 
 					value="3" required #mentorSkills="ngModel">
 				</div>
 				<div class="skill">
-					<label class="rateNo">4</label>
+					<label class="rateNo"><span>4</span></label>
 					<input type="radio" [(ngModel)]="backgrnd.mentorSkills" name="backgrnd.mentorSkills" 
 					value="4" required #mentorSkills="ngModel">
 				</div>
 				<div class="skill">
-					<label class="rateNo">5</label>
+					<label class="rateNo"><span>5</span></label>
 					<input type="radio" [(ngModel)]="backgrnd.mentorSkills" name="backgrnd.mentorSkills" 
 					value="5" required #mentorSkills="ngModel">
 				</div>
@@ -163,17 +163,17 @@
 		<div class="form-group" [class.has-error]="menteeNo.invalid && menteeNo.touched">
 			<label>how many mentee(s) are you willing to take? <span class="required">*</span></label>
 				<div class="skill">
-					<label class="rateNo">1</label>
+					<label class="rateNo"><span>1</span></label>
 					<input type="radio" [(ngModel)]="backgrnd.menteeNo" name="backgrnd.menteeNo" value="1"
 					required #menteeNo="ngModel">
 				</div>	
 				<div class="skill">
-					<label class="rateNo">2</label>
+					<label class="rateNo"><span>2</span></label>
 					<input type="radio" [(ngModel)]="backgrnd.menteeNo" name="backgrnd.menteeNo" value="2"
 					required #menteeNo="ngModel">
 				</div>
 				<div class="skill">
-					<label class="rateNo">3</label>
+					<label class="rateNo"><span>3</span></label>
 				<input type="radio" [(ngModel)]="backgrnd.menteeNo" name="backgrnd.menteeNo" value="3"
 				required #menteeNo="ngModel">
 			</div>
