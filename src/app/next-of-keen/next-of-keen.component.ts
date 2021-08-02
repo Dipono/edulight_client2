@@ -13,17 +13,17 @@ export class NextOfKeenComponent implements OnInit {
   constructor(private _router:Router) { }
 
   relationship:Relationship[] =[
-    {name:'Mother'},
-    {name:'Father'},
-    {name:'Grandma'},
-    {name:'Grandpa'},
-    {name:'Sister'},
-    {name:'Brother'},
-    {name:'Uncle'},
-    {name:'Aunt'},
-    {name:'Cousin'},
-    {name:'Family Friend'},
-    {name:'Other'}
+    {id:1, name:'Mother'},
+    {id:2, name:'Father'},
+    {id:3, name:'Grandma'},
+    {id:4, name:'Grandpa'},
+    {id:5, name:'Sister'},
+    {id:6, name:'Brother'},
+    {id:7, name:'Uncle'},
+    {id:8, name:'Aunt'},
+    {id:9, name:'Cousin'},
+    {id:10, name:'Family Friend'},
+    {id:11, name:'Other'}
    ]
 
    nextOfKin={ 
