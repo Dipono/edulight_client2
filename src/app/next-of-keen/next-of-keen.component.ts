@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Relationship } from '../model/Relationship.model'
+//import { Relationship } from '../model/Relationship.model'
 import { Router } from '@angular/router';
 
 
@@ -12,7 +12,7 @@ export class NextOfKeenComponent implements OnInit {
 
   constructor(private _router:Router) { }
 
-  relationship:Relationship[] =[
+  /*relationship:Relationship[] =[
     {id:1, name:'Mother'},
     {id:2, name:'Father'},
     {id:3, name:'Grandma'},
@@ -24,7 +24,7 @@ export class NextOfKeenComponent implements OnInit {
     {id:9, name:'Cousin'},
     {id:10, name:'Family Friend'},
     {id:11, name:'Other'}
-   ]
+  ]*/
 
    nextOfKin={ 
      kinFullName:'',
