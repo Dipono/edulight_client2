@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras, ActivatedRoute } from '@angular/router'; 
 import { RegisterService } from '../register.service';
 
-
 @Component({
   selector: 'app-mentor-submit-info',
   templateUrl: './mentor-submit-info.component.html',

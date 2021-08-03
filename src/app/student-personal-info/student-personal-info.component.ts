@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras} from '@angular/router';
 
 @Component({
   selector: 'app-student-personal-info',
@@ -31,12 +31,43 @@ export class StudentPersonalInfoComponent implements OnInit {
 
   ngOnInit(): void {
     window.scrollTo(0,0)    
-    
   }
-
+  disDescribe:string
+  errMessage:string
   moveToSchool(){
-    console.log(this.mentee)
-    this._router.navigate(['/student-school-info'])
+    if(this.mentee.stud_id != '' && this.mentee.persType != '' && this.mentee.names != '' && this.mentee.streetNo != ''
+    && this.mentee.surname != '' && this.mentee.phone_Number != '' && this.mentee.email != '' && this.mentee.town != ''
+    && this.mentee.city != '' && this.mentee.code != '' && this.mentee.province != '' && this.mentee.disability != ''
+    && this.mentee.persType != ''){
+
+      const getValues: NavigationExtras = {
+        state: {
+          values: this.mentee
+        }
+      };
+      console.log(getValues)
+      if(this.mentee.disability =='yes'){
+        if(this.mentee.disabilityDesc == ''){
+          return this.disDescribe = "please describe disability"
+        }
+        else{
+        this._router.navigate(['/student-school-info'], getValues)            
+        }
+      }
+
+      else{
+      this._router.navigate(['/student-school-info'], getValues)                      
+      }
+
+    }
+
+    else{
+      console.log('all fild with * must be filled')
+      return this.errMessage="All fild with * must be filled"
+    }
+
+    //console.log(this.mentee)
+    //this._router.navigate(['/student-school-info'])
   }
 
 }

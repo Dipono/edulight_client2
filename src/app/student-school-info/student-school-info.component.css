@@ -108,6 +108,15 @@ fieldset{
     color:green
 }
 
+.disDescribe, .errMessage{
+    color: red;
+    font-size: 1.2em;
+    margin-left: 15px;
+}
+.help-block{
+    color: red;
+    margin-left: 15px;
+}
 
 
 /*

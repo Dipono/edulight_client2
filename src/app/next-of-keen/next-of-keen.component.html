@@ -14,24 +14,24 @@
 
         <div class="form-group">
             <label for="kinFullName"class="control-label">Name and Surname <span class="required">*</span></label>			
-            <input type="text" id="kinFullName" name="otherSubj" placeholder="Your answer" required
+            <input type="text" id="kinFullName" name="otherSubj" placeholder="Name and Surname" required
             class="control-form" name="nextOfKin.kinFullName" [(ngModel)]="nextOfKin.kinFullName">
             <!--<span class="help-block" *ngIf="persType.invalid && persType.touched">
                 Personality type is required
             </span>-->
         </div>
 
-        <!--<div class="form-group" >
+        <div class="form-group" >
             <label>Relationship to you? <span class="required">*</span></label>
             <div class="myRadio" *ngFor="let relation of relationship">
                 <label><input type="radio" [value]="relation.name" required class="control-form"
                  name="nextOfKin.kinRelationType" [(ngModel)]="nextOfKin.kinRelationType" ><span>{{relation.name}}</span></label>
             </div>
-            !--<span class="help-block" *ngIf="organization.invalid && organization.touched" >
+            <!--<span class="help-block" *ngIf="organization.invalid && organization.touched" >
                 This field is required
-            </span>-
+            </span>-->
             
-        </div>-->
+        </div>
 
         <div class="form-group">
             <fieldset class="address">
@@ -78,9 +78,9 @@
             <progress value="75" max="100" >75% </progress>
             <label class="pages">Page 3 of 4</label>
         </div>
-        <!--<span class="errMessage">
+        <span class="errMessage">
             {{errMessage}}
-        </span>-->
+        </span>
 
         <div class="form-button">
             <button class="back-btn" (click)="schoolInfo()">Back</button>				

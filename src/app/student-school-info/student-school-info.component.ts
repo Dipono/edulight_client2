@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subjects } from '../model/subjects.model'
-import { Router } from '@angular/router';
+import { Router, NavigationExtras, ActivatedRoute } from '@angular/router'; 
 
 @Component({
   selector: 'app-student-school-info',
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./student-school-info.component.css']
 })
 export class StudentSchoolInfoComponent implements OnInit {
-
+ 
   subject: Subjects[] = [
     {id: 1, subjName: 'Mathematics', isChecked: false},
     {id: 2, subjName: 'Technical',isChecked: false},
@@ -37,7 +37,14 @@ export class StudentSchoolInfoComponent implements OnInit {
       award:''
       
     }
-  constructor(private _router:Router) { }
+    mentee:any
+  constructor(private _router:Router, private route: ActivatedRoute) {
+    this.route.queryParams.subscribe(params => {
+      if (this._router.getCurrentNavigation().extras.state) {
+        this.mentee = this._router.getCurrentNavigation().extras.state.values;
+      }
+    });
+   }
 
   ngOnInit(): void {
     window.scrollTo(0,0)        
@@ -45,10 +52,10 @@ export class StudentSchoolInfoComponent implements OnInit {
 
   selectSubject(){
     //console.log(this.subject)
+    this.school.subjName.length= 0
     for (let k = 0; k < this.subject.length; k++){
       
       if(this.subject[k].isChecked == true){
-        console.log(this.subject[k]);
         this.school.subjName[k] = this.subject[k].subjName
       }
     }
@@ -71,14 +78,46 @@ export class StudentSchoolInfoComponent implements OnInit {
   }
   
 
+  errMessage:string
   emergencyContact(){
     this.school.course_Name[0] = this.fir_Course_Name
     this.school.course_Name[1] = this.sec_Course_Name
     this.school.tert_Name[0] =  this.fir_Tert_Name       
     this.school.tert_Name[1] =  this.sec_Tert_Name
+
+    if(this.school.subjName == undefined || this.school.tert_Name[0] == undefined || this.school.course_Name[0] == undefined)
+    {
+      console.log(this.school.tert_Name[0])
+      this.school.subjName.length = 0;
+      this.school.tert_Name[0] = ''
+      this.school.course_Name[0]= ''
+    }
+
+    if(this.school.subjName.length != 0 && this.school.grade != '' && this.school.tert_Name != []
+       && this.school.course_Name[0] != ''){
+     // console.log( 'success ',this.school.tert_Name.length)
+     // console.log( 'success ',this.school.tert_Name)
+      
+      //console.log('results',this.school)
+      for(var items in this.mentee){
+        this.school[items] = this.mentee[items]
+      }      
+
+      const getValues: NavigationExtras = {
+        state: {
+          values: this.school
+        }
+      };
+      console.log(getValues)
+      this._router.navigate(['/next-of-kin'], getValues)
+    }
+    else{
+      console.log('all fild with * must be filled')
+      return this.errMessage="All fild with * must be filled"
+    }
     
-    console.log('results',this.school)
-    this._router.navigate(['/next-of-kin'])
+    
+    //
   }
   
   personalInfo(){

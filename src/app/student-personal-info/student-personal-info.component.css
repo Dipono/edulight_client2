@@ -73,20 +73,13 @@ progress[value]{
     height: 20px;
 }
 
-.help-block{
-    color: red;
-    margin-left: 15px;
-}
+
 
 .ng-valid[required], .ng-valid.required{
     border-bottom: green 2px solid;
 }
-
-.errMessage{
-    color: red;
-    font-size: 1.2em;
-}
 */
+
 element.style {
     width: 80px;
     height: 30px;
@@ -121,3 +114,12 @@ element.style {
     margin-left: 10px;
 }
 
+.disDescribe, .errMessage{
+    color: red;
+    font-size: 1.2em;
+    margin-left: 15px;
+}
+.help-block{
+    color: red;
+    margin-left: 15px;
+}

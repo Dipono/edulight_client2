@@ -48,11 +48,18 @@
             name="mentee.alt_Phone_Number" [(ngModel)]="mentee.alt_Phone_Number">
         </div>
 
-        <div class="form-group">
+        <div class="form-group" class="form-group" [class.has-error]="email.invalid && email.touched">
             <label for="email"class="control-label">Email Address <span class="required">*</span></label>
-            <input type="text" id="email" required placeholder="Email Address"  class="form-control" 
-            name="mentee.email" [(ngModel)]="mentee.email"/>
+            <input type="text" id="email" required pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
+             #email="ngModel" placeholder="Email Address"  class="form-control" name="mentee.email" [(ngModel)]="mentee.email"/>
+            <span class="help-block" *ngIf="email.errors?.required && email.touched">
+				Email Address is required
+			</span>
+            <span class="help-block" *ngIf="email.errors?.pattern && email.touched">
+				Email Address is invalid
+			</span>
         </div>
+        
         
         <div class="form-group">
             <fieldset class="address">
@@ -99,9 +106,9 @@
             <label for="disabilityDesc"class="control-label">If yes, please describe</label>			
 			<input type="text" id="disabilityDesc" placeholder="Your answer" required class="form-control" name="mentee.disabilityDesc"
             [(ngModel)]="mentee.disabilityDesc">
-			<!--<span class="help-block" *ngIf="persType.invalid && persType.touched">
-				Personality type is required
-			</span>-->
+			<span class="disDescribe">
+				{{disDescribe}}
+			</span>
         </div>
 
         <div class="form-group">
@@ -130,6 +137,9 @@
             <progress value="25" max="100" >25% </progress>
             <label class="pages">Page 1 of 4</label>
 		</div>
+        <span class="errMessage">
+				{{errMessage}}
+		</span>
 
         <div class="form-button">
             <button (click)="moveToSchool()" class="form-btn" >Next</button>

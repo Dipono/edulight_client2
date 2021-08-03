@@ -9,6 +9,7 @@
 	<div class="main">
 		<div class="form-group">
 			<span class="header"><label class="intro">Academic background</label></span>
+			<p>current studies and what you wish to study after high/secondary school</p>
 		</div>
 
         <fieldset>
@@ -19,7 +20,7 @@
 					<label><input type="radio" required name="school.grade" [(ngModel)]="school.grade" 
 					value="10" class="control-form" ><span>Grade 10</span></label>
 					<label><input type="radio" required name="school.grade" [(ngModel)]="school.grade" 
-					value="11" class="control-form"  ><span>Grade 11</span></label>
+					value="11" class="control-form" ><span>Grade 11</span></label>
 				</div>
 			</div>
 
@@ -114,9 +115,9 @@
 				<progress value="50" max="100" >50% </progress>
 				<label class="pages">Page 2 of 4</label>
 			</div>
-			<!--<span class="errMessage">
+			<span class="errMessage">
 				{{errMessage}}
-			</span>-->
+			</span>
 
 			<div class="form-button">
 				<button class="back-btn" (click)="personalInfo()">Back</button>				

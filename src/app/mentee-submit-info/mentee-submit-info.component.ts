@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras, ActivatedRoute } from '@angular/router'; 
+import { RegisterService } from '../register.service';
 
 @Component({
   selector: 'app-mentee-submit-info',
@@ -8,8 +9,15 @@ import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
 })
 export class MenteeSubmitInfoComponent implements OnInit {
 
-  constructor(private _router:Router, private route: ActivatedRoute) { }
-
+  mentee:any
+  constructor(private _router:Router, private route: ActivatedRoute, private register:RegisterService) { 
+    this.route.queryParams.subscribe(params => {
+      if (this._router.getCurrentNavigation().extras.state) {
+        this.mentee = this._router.getCurrentNavigation().extras.state.values;
+      }
+    });
+  }
+ 
   ngOnInit(): void {
     window.scrollTo(0,0)    
   }
@@ -20,8 +28,11 @@ export class MenteeSubmitInfoComponent implements OnInit {
 
   successMessage:string
   successfully(){
-    this.successMessage = "SuccessFully Registered"
-    console.log(this.successMessage)
-    this._router.navigate(['/'])    
+    this.register.registerMentee(this.mentee)
+    .subscribe(data=>{
+      data = this.mentee;
+      this._router.navigate(['/mentee-successfully'])
+    },
+    error=>{}) 
   }
 }
