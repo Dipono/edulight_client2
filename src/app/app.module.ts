@@ -21,6 +21,7 @@ import { MentorSuccessfullyComponent } from './mentor-successfully/mentor-succes
 import { MentorBackgroundInfoComponent } from './mentor-background-info/mentor-background-info.component';
 import { NextOfKeenComponent } from './next-of-keen/next-of-keen.component';
 import { MenteeSubmitInfoComponent } from './mentee-submit-info/mentee-submit-info.component';
+import { MenteeInfoComponent } from './mentee-info/mentee-info.component';
 //const routes:Routes
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { MenteeSubmitInfoComponent } from './mentee-submit-info/mentee-submit-in
     MentorSuccessfullyComponent,
     MentorBackgroundInfoComponent,
     NextOfKeenComponent,
-    MenteeSubmitInfoComponent
+    MenteeSubmitInfoComponent,
+    MenteeInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +56,9 @@ import { MenteeSubmitInfoComponent } from './mentee-submit-info/mentee-submit-in
       {path: 'mentor-submit-info', component:MentorSubmitInfoComponent},
       {path: 'mentor-successfully', component:MentorSuccessfullyComponent},
       {path: 'next-of-kin', component:NextOfKeenComponent},//
-      {path: 'mentee-submit-info', component:MenteeSubmitInfoComponent}
+      {path: 'mentee-submit-info', component:MenteeSubmitInfoComponent},
+      {path: 'mentee-info', component:MenteeInfoComponent}
+      
 
       
     ]),

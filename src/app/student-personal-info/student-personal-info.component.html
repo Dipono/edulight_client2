@@ -3,8 +3,7 @@
 		<div class="form-group">
 			<h3>MENTEE SIGN-UP FORM</h3>
 			<p>Thank you! For trusting us with your growth. We hope you find your journey as a mentee here 
-            at Edulight Academia fruitful beyond your expectations.  <br>Please make sure you take the personality test( <a href="">https://16personalities.com/free-personality-test</a> ) before you fill in this form.</p>
-			<span class="required">*Required</span>
+            at Edulight Academia fruitful beyond your expectations.<span class="required">*Required</span>
 		</div>
 	</div> 
 
@@ -12,7 +11,7 @@
         <div class="form-group">
             <label for="stud_id"class="control-label">ID Number <span class="required">*</span></label>
             <input type="tel" id="stud_id" required placeholder="Identification Number" class="form-control" 
-            name="mentee.stud_id" [(ngModel)]="mentee.stud_id"/>
+            name="mentee.stud_id" [(ngModel)]="mentee.stud_id" />
         </div>
         <div class="form-group">
             <label for="surname"class="control-label">Last Name <span class="required">*</span></label>
@@ -23,6 +22,15 @@
             <label for="names"class="control-label">First Name <span class="required">*</span></label>
             <input type="text" id="names" required placeholder="Names"  class="form-control" 
             name="mentee.names" [(ngModel)]="mentee.names"/>
+        </div>
+        <div class="form-group">
+            <label for="dob"class="control-label">Date of Birth <span class="required">*</span></label>
+            <input type="date" id="dob" required placeholder="Date of Birth"  class="form-control" 
+            name="mentee.dob" [(ngModel)]="mentee.dob" (change)="getDateofBirth(mentee.dob)"/>
+
+            <span class="incorrectDob">
+                {{incorrectDob}}
+            </span>
         </div>
         <div class="form-group">
             <label>Gender <span class="required">*</span></label>
@@ -116,16 +124,6 @@
             describe. If no, you may skip</label>			
 			<input type="text" id="medicalCondition" placeholder="Your answer" required class="form-control" 
             name="mentee.medicalCondition" [(ngModel)]="mentee.medicalCondition">
-			<!--<span class="help-block" *ngIf="persType.invalid && persType.touched">
-				Personality type is required
-			</span>-->
-        </div>
-
-        <div class="form-group">
-            <label for="persType"class="control-label">Personality type (the results from the personality test you took before hand) 
-			<span class="required">*</span></label>			
-			<input type="text" id="persType" placeholder="Your answer" required class="form-control" name="mentee.persType"
-            [(ngModel)]="mentee.persType">
 			<!--<span class="help-block" *ngIf="persType.invalid && persType.touched">
 				Personality type is required
 			</span>-->

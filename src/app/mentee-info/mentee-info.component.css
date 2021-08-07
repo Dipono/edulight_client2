@@ -2,9 +2,12 @@ body{
     margin: 15px;
 }
 
-.required{
-    margin-top: 5px;
-    color: red;
+.form-group{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin-top: 25px;
 }
 
 .header .form-group {
@@ -13,15 +16,13 @@ body{
     border-radius: 5px;
 }
 
-.form-group{
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-    margin-top: 25px;
+.main p{
+    margin: 3px;
+    padding-bottom: 8px;
+    padding-top: 8px;
 }
-
 .main .form-group .header{
-    height: 50px;
+    height: 35px;
     background-color: green;
 
 }
@@ -34,9 +35,23 @@ h3,p,label,input{
     margin-left: 2%;
 }
 
+
+/*.header .form-group{
+    display: flex;
+    flex-direction: column;
+    flex-direction: column;
+    border: 1px solid grey;
+    border-radius: 5px;
+}*/
+
 .header .form-group h3{
     font-size: 1.5em;
     text-align: center;
+}
+
+img{
+    width: 100%;
+    height: 100vh;
 }
 
 input{
@@ -50,46 +65,36 @@ input:focus{
     outline: none
 }
 
+.required{
+    margin-top: 5px;
+    color: red;
+}
+
 .main{
     margin-top: 10px;
-}/*
-.town{
-    display: flex;
-}*/
-
-.footer{
-    margin-top: 15px;
 }
 
 /*
+.main .form-group{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin-top: 25px;
+}*/
 .main input{
     margin-top: 10px;
 }
 
-
+.footer{
+    margin-top: 15px;
+}
 
 progress[value]{
     width: 250px;
     height: 20px;
 }
 
-
-
-.ng-valid[required], .ng-valid.required{
-    border-bottom: green 2px solid;
-}
-*/
-
-element.style {
-    width: 80px;
-    height: 30px;
-    color: white;
-    background-color: green;
-    font-weight: 500;
-    margin-top: 15px;
-    margin-left: 15px;
-    border-radius: 5px;
-}
 .footer .form-btn{
     width: 80px;
     height: 30px;
@@ -101,25 +106,18 @@ element.style {
     border-radius: 5px;
 }
 
-.footer{
-    margin-top:10px;
+.back-btn{
+    width: 80px;
+    height: 30px;
+    color: green;
+    font-weight: 500;
+    margin-top: 15px;
+    border-radius: 5px;
 }
 
-.myRadio{
-    display: flex;
-    flex-direction: column;
-}
-
-.myRadio span{
-    margin-left: 10px;
-}
-
-.disDescribe, .errMessage, .incorrectDob{
-    color: red;
-    font-size: 1.2em;
-    margin-left: 15px;
-}
-.help-block{
-    color: red;
-    margin-left: 15px;
+@media screen and (max-width:750px){
+    img{
+        width: 100%;
+        height: 50vh;
+    }
 }

@@ -29,10 +29,43 @@ export class MenteeSubmitInfoComponent implements OnInit {
   successMessage:string
   successfully(){
     this.register.registerMentee(this.mentee)
-    .subscribe(data=>{
+    .subscribe(data=> {
       data = this.mentee;
-      this._router.navigate(['/mentee-successfully'])
+      console.log('data are',data)
+      this._router.navigate(['/'])
+      
     },
-    error=>{}) 
+    error=>{
+      console.log(error)
+      
+    })
+
+
+
+   /* this.register.registerMentee(this.mentee).subscribe(data=> {console.log(data) 
+    this._router.navigate(['/'])      
+    })    */
+    //this.mentee.stud_id = 145632987526
+    //if(this.mentee.stud_id != '' && this.mentee.stud_id != undefined){
+      /*this.register.registerMentee(this.mentee)
+      .subscribe(data=>{
+        console.log(data)
+      data = this.mentee;
+      console.log('data are',data)
+      this._router.navigate(['/'])
+      },
+      error=>{
+        console.log('some error')   
+        console.log(error)      
+           
+        
+      }) */
+    //}
+    /*else{
+      console.log('Did not register successfully, try to register again')  
+      this._router.navigate(['/student-personal-info'])
+          
+    }*/
+    
   }
 }

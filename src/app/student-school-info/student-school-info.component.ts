@@ -55,8 +55,9 @@ export class StudentSchoolInfoComponent implements OnInit {
     this.school.subjName.length= 0
     for (let k = 0; k < this.subject.length; k++){
       
-      if(this.subject[k].isChecked == true){
+      if(this.subject[k].isChecked == true && this.subject[k].subjName != null ){
         this.school.subjName[k] = this.subject[k].subjName
+
       }
     }
   }
@@ -80,6 +81,11 @@ export class StudentSchoolInfoComponent implements OnInit {
 
   errMessage:string
   emergencyContact(){
+    /*for(var k =0; k <this.school.subjName.length; k++){
+      if(this.school.subjName[k] == 'empty'){
+        console.log(k)
+      }
+    }*/
     this.school.course_Name[0] = this.fir_Course_Name
     this.school.course_Name[1] = this.sec_Course_Name
     this.school.tert_Name[0] =  this.fir_Tert_Name       
@@ -108,7 +114,6 @@ export class StudentSchoolInfoComponent implements OnInit {
           values: this.school
         }
       };
-      console.log(getValues)
       this._router.navigate(['/next-of-kin'], getValues)
     }
     else{
