@@ -9,15 +9,10 @@ body{
     font-size: 1.2em;
     line-height: 1.5;
     margin: 22px 5px 0;
-    color:black
+    color:black;
+    
 }
 
-
-header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
 .logo .name{
     margin-left: 5px;
     font-size: 1.5em;
@@ -32,18 +27,25 @@ li{
     list-style: none;
 }
 
-.head-content .nav-head{
+.head-content ul{
     display: flex;
-    margin-right: 10px;
+    text-align: center;
 }
 
 .nav-head li{
     padding: 0 10px;
 }
+.image{
+    text-align: center;
+}
 
 .head-content .nav-head li a:hover{
     border-bottom: grey solid 1px;
 
+}
+
+.footer{
+    margin-top:15px;
 }
 
 @media screen and (max-width:750px){

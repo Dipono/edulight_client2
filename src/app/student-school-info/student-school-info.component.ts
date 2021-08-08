@@ -11,7 +11,7 @@ export class StudentSchoolInfoComponent implements OnInit {
  
   subject: Subjects[] = [
     {id: 1, subjName: 'Mathematics', isChecked: false},
-    {id: 2, subjName: 'Technical',isChecked: false},
+    {id: 2, subjName: 'Technical Maths',isChecked: false},
     {id: 3, subjName: 'Mathematical Literecy',isChecked: false},
     {id: 4, subjName: 'Accounting',isChecked: false},
     {id: 5, subjName: 'Business Studies',isChecked: false},

@@ -28,7 +28,7 @@
 				<label>Core subjects (check all that is applicable to you and type other not listed) <span class="required">*</span></label>
 				<div class="myRadio" *ngFor="let sub of subject" >
 					<label><input type="checkbox" id="sub.subjNam" name="{{sub.subjNam}}" [value]="sub.subjName"
-					class="control-form" (change)="selectSubject()" [(ngModel)]="sub.isChecked">{{sub.subjName}}</label>
+					class="control-form" (change)="selectSubject()" [(ngModel)]="sub.isChecked"><span>{{sub.subjName}}</span></label>
 				</div>
 				<!--<span class="help-block" *ngIf="organization.invalid && organization.touched" >
 					This field is required
@@ -91,7 +91,7 @@
 		
 
         <div class="form-group">
-			<label for="award"class="control-label">Please desclose any academic awards or special achievement</label>			
+			<label for="award"class="control-label">Please disclose any academic awards or special achievement</label>			
 			<input type="text" id="award" name="school.award" [(ngModel)]="school.award"
 			class="control-form" placeholder="Your answer" required class="form-control">
 			<!--<span class="help-block" *ngIf="persType.invalid && persType.touched">
