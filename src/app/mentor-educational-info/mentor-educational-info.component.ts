@@ -11,7 +11,6 @@ import { Router, NavigationExtras, ActivatedRoute  } from '@angular/router';
 export class MentorEducationalInfoComponent implements OnInit {
   mentor:any
   mentorEducation = {
-    persType:'',
     qualification:'',
     institution:'',
     secQualification:'',
@@ -39,7 +38,7 @@ export class MentorEducationalInfoComponent implements OnInit {
   
   mentorBackground(){
 
-    if(this.mentorEducation.institution != '' && this.mentorEducation.persType != '' && this.mentorEducation.qualification != ''
+    if(this.mentorEducation.institution != '' && this.mentorEducation.qualification != ''
     && this.mentorEducation.studyLevel != '' && this.mentorEducation.organization != ''){
       for(var items in this.mentor){
         this.mentorEducation[items] = this.mentor[items]
