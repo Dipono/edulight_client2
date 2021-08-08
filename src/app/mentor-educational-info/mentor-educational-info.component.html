@@ -51,6 +51,10 @@
 			value="3rd Year" class="control-form" required #studyLevel="ngModel"><span>3rd year</span></label>
 			<label><input type="radio" [(ngModel)]="mentorEducation.studyLevel" name="mentorEducation.studyLevel" 
 			value="other Level" class="control-form" required #studyLevel="ngModel"><span>3+ years</span></label>
+			<label><input type="radio" [(ngModel)]="mentorEducation.studyLevel" name="mentorEducation.studyLevel" 
+			value="Postgraduate" class="control-form" required #studyLevel="ngModel"><span>Postgraduate</span></label>
+			<label><input type="radio" [(ngModel)]="mentorEducation.studyLevel" name="mentorEducation.studyLevel" 
+			value="Graduate" class="control-form" required #studyLevel="ngModel"><span>Graduate</span></label>
 			</div>
 			<span class="help-block" *ngIf="studyLevel.invalid && studyLevel.touched" >
 				Level of study is required

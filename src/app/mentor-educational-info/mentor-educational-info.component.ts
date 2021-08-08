@@ -38,6 +38,7 @@ export class MentorEducationalInfoComponent implements OnInit {
   
   mentorBackground(){
 
+    //console.log(this.mentorEducation.studyLevel)
     if(this.mentorEducation.institution != '' && this.mentorEducation.qualification != ''
     && this.mentorEducation.studyLevel != '' && this.mentorEducation.organization != ''){
       for(var items in this.mentor){
