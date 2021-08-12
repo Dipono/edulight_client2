@@ -13,17 +13,16 @@ export class RegisterService {
       observe: 'body'
     });
   }
-
+/*
   
  registerMentee(body: any){
     return this.http.post('https://edulight-server.herokuapp.com/registerMentee', body, {
       observe: 'body'
     });
-  }
- /*
+  }*/
   registerMentee(body: any){
     return this.http.post('http://localhost:4041/registerMentee', body, {
       observe: 'body'
     });
-  }*/
+  }
 }

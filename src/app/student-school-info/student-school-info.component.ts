@@ -30,6 +30,7 @@ export class StudentSchoolInfoComponent implements OnInit {
     sec_Tert_Name:''    
     selectModules:''
     school={
+      school_Name:'',
       subjName:[],
       grade:'',
       tert_Name:[],
@@ -100,7 +101,7 @@ export class StudentSchoolInfoComponent implements OnInit {
     }
 
     if(this.school.subjName.length != 0 && this.school.grade != '' && this.school.tert_Name != []
-       && this.school.course_Name[0] != ''){
+       && this.school.course_Name[0] != '' && this.school.school_Name){
      // console.log( 'success ',this.school.tert_Name.length)
      // console.log( 'success ',this.school.tert_Name)
       
