@@ -29,7 +29,9 @@ export class MentorBackgroundInfoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    window.scrollTo(0,0)    
+    localStorage.removeItem('mentorBackground');
+    
+    window.scrollTo(0,0)
   }
 
   errMessage:string
@@ -38,7 +40,7 @@ export class MentorBackgroundInfoComponent implements OnInit {
     
     if(this.backgrnd.criminalRec != '' && this.backgrnd.mentor != '' && this.backgrnd.workPupil != '' &&
     this.backgrnd.menteeNo != '' && this.backgrnd.mentorSkills != '' && this.backgrnd.mentoringReason != ''){
-      for(var items in this.mentor){
+      /*for(var items in this.mentor){
         this.backgrnd[items] = this.mentor[items]
       }
       console.log('after ',this.backgrnd)
@@ -47,9 +49,11 @@ export class MentorBackgroundInfoComponent implements OnInit {
           values: this.backgrnd
         }
       };
-      console.log('array ', getValues)
+      console.log('array ', getValues)*/
+      localStorage.setItem('mentorBackground', JSON.stringify(this.backgrnd))
       
-      this._router.navigate(['/mentor-submit-info'], getValues)
+      //this._router.navigate(['/mentor-submit-info'], getValues)
+      this._router.navigate(['/mentor-submit-info'])
     }
     else{
       console.log('all fild must be filled')

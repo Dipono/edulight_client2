@@ -19,6 +19,12 @@ export class HomeComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    localStorage.removeItem('mentee');
+    localStorage.removeItem('menteeEdu');
+    localStorage.removeItem('menteeKin');
+    localStorage.removeItem('mentor');
+    localStorage.removeItem('mentorEducation');
+    localStorage.removeItem('mentorBackground');
   }
 
   move(){

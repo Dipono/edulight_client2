@@ -14,24 +14,10 @@ export class NextOfKeenComponent implements OnInit {
   constructor(private _router:Router, private route: ActivatedRoute) {
     this.route.queryParams.subscribe(params => {
       if (this._router.getCurrentNavigation().extras.state) {
-        this.mentee = this._router.getCurrentNavigation().extras.state.values;
+        //this.mentee = this._router.getCurrentNavigation().extras.state.values;
       }
     });
    }
-
-  /*relationship:Relationship[] =[
-    {id:1, name:'Mother'},
-    {id:2, name:'Father'},
-    {id:3, name:'Grandma'},
-    {id:4, name:'Grandpa'},
-    {id:5, name:'Sister'},
-    {id:6, name:'Brother'},
-    {id:7, name:'Uncle'},
-    {id:8, name:'Aunt'},
-    {id:9, name:'Cousin'},
-    {id:10, name:'Family Friend'},
-    {id:11, name:'Other'}
-  ]*/
 
   relationship =[
     {id:1, name:'Mother'},
@@ -59,6 +45,8 @@ export class NextOfKeenComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    localStorage.removeItem('menteeKin');
+    
     window.scrollTo(0,0);    
   }
 
@@ -68,7 +56,7 @@ export class NextOfKeenComponent implements OnInit {
     if(this.nextOfKin.kinFullName != '' && this.nextOfKin.kinRelationType != '' && this.nextOfKin.kinPhoneNo != ''
        && this.nextOfKin.kinHouseNo != '' && this.nextOfKin.kinProvince != '' && this.nextOfKin.kinTown != ''
        && this.nextOfKin.kinCode != '' && this.nextOfKin.kinCity != ''){
-        for(var items in this.mentee){
+        /*for(var items in this.mentee){
           this.nextOfKin[items] = this.mentee[items]
         }      
   
@@ -76,8 +64,11 @@ export class NextOfKeenComponent implements OnInit {
           state: {
             values: this.nextOfKin
           }
-        };
-        this._router.navigate(['/mentee-submit-info'],getValues)
+        };*/
+        //this._router.navigate(['/mentee-submit-info'],getValues)
+      localStorage.setItem('menteeKin', JSON.stringify(this.nextOfKin))
+        
+        this._router.navigate(['/mentee-submit-info'])
         
        }
 
@@ -90,6 +81,8 @@ export class NextOfKeenComponent implements OnInit {
   } 
 
   schoolInfo(){
+    localStorage.removeItem('menteeEdu')
+    
     this._router.navigate(['/student-school-info'])
   }
   

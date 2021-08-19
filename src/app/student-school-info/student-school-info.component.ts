@@ -26,8 +26,8 @@ export class StudentSchoolInfoComponent implements OnInit {
     fir_Course_Name=''
     sec_Course_Name=''
     otherSubj:''
-    fir_Tert_Name:''        
-    sec_Tert_Name:''    
+    fir_Tert_Name=''        
+    sec_Tert_Name=''    
     selectModules:''
     school={
       school_Name:'',
@@ -42,12 +42,13 @@ export class StudentSchoolInfoComponent implements OnInit {
   constructor(private _router:Router, private route: ActivatedRoute) {
     this.route.queryParams.subscribe(params => {
       if (this._router.getCurrentNavigation().extras.state) {
-        this.mentee = this._router.getCurrentNavigation().extras.state.values;
+        //this.mentee = this._router.getCurrentNavigation().extras.state.values;
       }
     });
    }
 
   ngOnInit(): void {
+    localStorage.removeItem('menteeEdu');    
     window.scrollTo(0,0)        
   }
 
@@ -82,44 +83,31 @@ export class StudentSchoolInfoComponent implements OnInit {
 
   errMessage:string
   emergencyContact(){
-    /*for(var k =0; k <this.school.subjName.length; k++){
-      if(this.school.subjName[k] == 'empty'){
-        console.log(k)
-      }
-    }*/
+    this.errMessage =''
+    
     this.school.course_Name[0] = this.fir_Course_Name
     this.school.course_Name[1] = this.sec_Course_Name
     this.school.tert_Name[0] =  this.fir_Tert_Name       
     this.school.tert_Name[1] =  this.sec_Tert_Name
 
-    if(this.school.subjName == undefined || this.school.tert_Name[0] == undefined || this.school.course_Name[0] == undefined)
+    console.log(this.fir_Tert_Name  ,'\t',this.fir_Course_Name)
+
+    if(this.school.subjName == undefined)
     {
       console.log(this.school.tert_Name[0])
       this.school.subjName.length = 0;
-      this.school.tert_Name[0] = ''
-      this.school.course_Name[0]= ''
     }
 
-    if(this.school.subjName.length != 0 && this.school.grade != '' && this.school.tert_Name != []
-       && this.school.course_Name[0] != '' && this.school.school_Name){
+    if(this.school.subjName.length != 0 && this.school.grade != '' && this.fir_Tert_Name != ''
+       && this.fir_Course_Name != '' && this.school.school_Name){
      // console.log( 'success ',this.school.tert_Name.length)
-     // console.log( 'success ',this.school.tert_Name)
+      localStorage.setItem('menteeEdu', JSON.stringify(this.school))
       
-      //console.log('results',this.school)
-      for(var items in this.mentee){
-        this.school[items] = this.mentee[items]
-      }      
-
-      const getValues: NavigationExtras = {
-        state: {
-          values: this.school
-        }
-      };
-      this._router.navigate(['/next-of-kin'], getValues)
+      this._router.navigate(['/next-of-kin'])
     }
     else{
       console.log('all fild with * must be filled')
-      return this.errMessage="All fild with * must be filled"
+      this.errMessage="All fild with * must be filled"
     }
     
     
@@ -127,6 +115,8 @@ export class StudentSchoolInfoComponent implements OnInit {
   }
   
   personalInfo(){
+    localStorage.removeItem('mentee')
+    
     this._router.navigate(['/student-personal-info'])
   }
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationExtras, ActivatedRoute  } from '@angular/router';
-import { FormGroup, FormControl, Validators } from '@angular/forms'
+import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { RegisterService } from '../register.service';
+
 
 
 @Component({
@@ -11,23 +13,23 @@ import { FormGroup, FormControl, Validators } from '@angular/forms'
 export class MentorPersonalInfoComponent implements OnInit {
 
   //myForm: FormGroup;
-  mentor= {
-    fullName:'',
-    surname:'',
-    dob:'',
-    reAddress:'',
-    gender:'',
-    cellNo:'',
-    altCellNo:'',
-    email:'',
-    disability:'',
-    disabilityInfo:'',
-    facebook:'',
-    twitter:'',
-    instagram:'',
-    linkedin:''
+  mentor = {
+    fullName: '',
+    surname: '',
+    dob: '',
+    reAddress: '',
+    gender: '',
+    cellNo: '',
+    altCellNo: '',
+    email: '',
+    disability: '',
+    disabilityInfo: '',
+    facebook: '',
+    twitter: '',
+    instagram: '',
+    linkedin: ''
   }
-  constructor(private _router:Router, private route: ActivatedRoute) {
+  constructor(private _router: Router, private route: ActivatedRoute, private checkEmailMentor: RegisterService) {
 
 
     /*this.myForm = new FormGroup({
@@ -46,7 +48,7 @@ export class MentorPersonalInfoComponent implements OnInit {
       instagra: new FormControl(null, Validators.required),     
       linkedin: new FormControl(null, Validators.required),   
     })*/
-   }
+  }
 
   /* mentor2 ={
      id: 123456
@@ -54,52 +56,88 @@ export class MentorPersonalInfoComponent implements OnInit {
 
 
   ngOnInit(): void {
-    window.scrollTo(0,0)    
+    localStorage.removeItem('mentor');
+    
+    window.scrollTo(0, 0)
   }
 
+  errMessage: string
+  existEmail: string
+  dobMessage: string
+  careentDate: Date
 
-  errMessage:string
-  
-  educational(){
+
+  getYear() {
+    this.dobMessage = ''
+    let thisYear = new Date().getFullYear()
+
+    if (thisYear - Number(this.mentor.dob.substring(0, 4)) >= 18) {
+      console.log('good')
+      this.dobMessage = ''
+      return true
+    }
+    console.log('You must be 18 or older')
+    this.dobMessage = 'You must be 18 or older'
+    return false
+
+  }
+
+  educational() {
     /*for(var items in this.mentor){
       //console.log(this.mentor[k])
       console.log(items,' ',this.mentor[items])
       this.mentor2[items] = this.mentor[items];
       
     }*/
-    console.log(this.mentor.disability)
+    this.errMessage = '';
+    this.existEmail = '';
+    this.dobMessage = ''
+    //let thisYear = new Date().getFullYear()
 
-    if(this.mentor.surname != '' && this.mentor.fullName != '' && this.mentor.cellNo != ''
-      && this.mentor.disability != '' && this.mentor.email != '' && this.mentor.gender != ''
-      && this.mentor.dob != '' && this.mentor.reAddress != ''){
-        const getValues: NavigationExtras = {
-          state: {
-            values: this.mentor
-          }
-        };
-        console.log(getValues)
-        if(this.mentor.disability =='yes'){
-          if(this.mentor.disabilityInfo == ''){
-            
-          }
-          else{
-          this._router.navigate(['/mentor-educational-info'], getValues)            
-          }
-        }
+    if (this.getYear() === true) {
+      this.checkEmailMentor.searchMentor(this.mentor.email)
+        .subscribe(data => {
+          return this.existEmail = "This Email Exist or Has Already Been Used"
+        }, error => {
 
-        else{
-        this._router.navigate(['/mentor-educational-info'], getValues)                      
-        }
-        
-        
-        
+          if (this.mentor.surname != '' && this.mentor.fullName != '' && this.mentor.cellNo != ''
+            && this.mentor.disability != '' && this.mentor.email != '' && this.mentor.gender != ''
+            && this.mentor.dob != '' && this.mentor.reAddress != '') {
+
+            const getValues: NavigationExtras = {
+              state: {
+                values: this.mentor
+              }
+            };
+            console.log(getValues)
+            if (this.mentor.disability == 'yes') {
+              if (this.mentor.disabilityInfo == '') {
+
+              }
+              else {
+                localStorage.setItem('mentor', JSON.stringify(this.mentor))
+                
+                this._router.navigate(['/mentor-educational-info'], getValues)
+              }
+            }
+
+            else {
+              localStorage.setItem('mentor', JSON.stringify(this.mentor))             
+              
+              this._router.navigate(['/mentor-educational-info'], getValues)
+            }
+          }
+
+          else {
+            console.log('all fild with * must be filled')
+            return this.errMessage = "All fild with * must be filled"
+          }
+        })
     }
 
-    else{
-      console.log('all fild with * must be filled')
-      return this.errMessage="All fild with * must be filled"
+    else {
+      console.log('you must be older than 18')
     }
-
   }
 
 }

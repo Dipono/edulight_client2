@@ -113,13 +113,13 @@ element.style {
 .myRadio span{
     margin-left: 10px;
 }
-
+/*
 .disDescribe, .errMessage, .incorrectDob{
     color: red;
     font-size: 1.2em;
     margin-left: 15px;
-}
-.help-block{
+}*/
+.help-block, .dobMessage, .disDescribe, .errMessage, .incorrectDob, .existingStud{
     color: red;
     margin-left: 15px;
 }

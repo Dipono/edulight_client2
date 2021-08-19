@@ -16,7 +16,7 @@ body{
     border-radius: 5px;
     margin-top: 25px;
 }
-.help-block{
+.help-block, .dobMessage{
     color: red;
     margin-left: 15px;
 }

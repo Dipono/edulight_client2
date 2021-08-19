@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationExtras, ActivatedRoute } from '@angular/router'; 
+import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
 import { RegisterService } from '../register.service';
 
 @Component({
@@ -9,63 +9,64 @@ import { RegisterService } from '../register.service';
 })
 export class MenteeSubmitInfoComponent implements OnInit {
 
-  mentee:any
-  constructor(private _router:Router, private route: ActivatedRoute, private register:RegisterService) { 
+  mentee = {}
+  menteeApp = {}
+  menteeEdu = {}
+  menteeKin = {}
+
+
+  constructor(private _router: Router, private route: ActivatedRoute, private register: RegisterService) {
     this.route.queryParams.subscribe(params => {
       if (this._router.getCurrentNavigation().extras.state) {
-        this.mentee = this._router.getCurrentNavigation().extras.state.values;
+        //this.mentee = this._router.getCurrentNavigation().extras.state.values;
       }
     });
   }
- 
+
   ngOnInit(): void {
-    window.scrollTo(0,0)    
+    window.scrollTo(0, 0)
   }
 
-  emergency(){
+  emergency() {
+    localStorage.removeItem('menteeKin')
+
     this._router.navigate(['/next-of-kin'])
   }
 
-  successMessage:string
-  successfully(){
+  successMessage: string
+  successfully() {
+
+    this.menteeApp = JSON.parse(localStorage.getItem('mentee'));
+    this.menteeEdu = JSON.parse(localStorage.getItem('menteeEdu'));
+    this.menteeKin = JSON.parse(localStorage.getItem('menteeKin'));
+
+    for (var app in this.menteeApp) {
+      this.mentee[app] = this.menteeApp[app]
+    }
+
+    for (var edu in this.menteeEdu) {
+      this.mentee[edu] = this.menteeEdu[edu]
+    }
+
+    for (var kin in this.menteeKin) {
+      this.mentee[kin] = this.menteeKin[kin]
+    }
+
+    console.log(this.mentee)
+
     this.register.registerMentee(this.mentee)
-    .subscribe(data=> {
-      data = this.mentee;
-      console.log('data are',data)
-      this._router.navigate(['/'])
-      
-    },
-    error=>{
-      console.log(error)
-      
-    })
+      .subscribe(data => {
+        data = this.mentee;
+        localStorage.removeItem('mentee');
+        localStorage.removeItem('menteeEdu');
+        localStorage.removeItem('menteeKin');
+        this._router.navigate(['/'])
 
-
-
-   /* this.register.registerMentee(this.mentee).subscribe(data=> {console.log(data) 
-    this._router.navigate(['/'])      
-    })    */
-    //this.mentee.stud_id = 145632987526
-    //if(this.mentee.stud_id != '' && this.mentee.stud_id != undefined){
-      /*this.register.registerMentee(this.mentee)
-      .subscribe(data=>{
-        console.log(data)
-      data = this.mentee;
-      console.log('data are',data)
-      this._router.navigate(['/'])
       },
-      error=>{
-        console.log('some error')   
-        console.log(error)      
-           
-        
-      }) */
-    //}
-    /*else{
-      console.log('Did not register successfully, try to register again')  
-      this._router.navigate(['/student-personal-info'])
-          
-    }*/
-    
+        error => {
+          console.log(error)
+
+        })
+
   }
 }
