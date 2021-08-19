@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class RegisterService {
 
   constructor(private http: HttpClient) { }
-/*
+
   registerMentor(body: any){
     return this.http.post('https://edulight-server.herokuapp.com/registerMentor', body, {
       observe: 'body'
@@ -28,10 +28,9 @@ export class RegisterService {
     return this.http.get('https://edulight-server.herokuapp.com/existingMenteeId/'+myId)
   }
 
-
-  */
-  // *************************   LOCALHOST  ***********   LOCALHOST   ***********   LOCALHOST    *************************//
   
+  // *************************   LOCALHOST  ***********   LOCALHOST   ***********   LOCALHOST    *************************//
+  /*
 
   registerMentor(body: any){
     return this.http.post('http://localhost:4041/registerMentor', body, {
@@ -52,6 +51,6 @@ export class RegisterService {
   searchMentee(myId){
     return this.http.get('http://localhost:4041/existingMenteeId/'+myId)
   }
-
+*/
 
 }
