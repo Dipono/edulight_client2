@@ -2,10 +2,6 @@ body{
     margin: 15px;
 }
 
-.required{
-    margin-top: 5px;
-    color: red;
-}
 
 .header .form-group {
     border: 1px solid grey;
@@ -14,6 +10,11 @@ body{
     display:flex;
     flex-direction: column;
 }
+.required{
+    margin-top: 5px;
+    color: red;
+}
+
 
 .form-group{
     display: flex;
@@ -26,10 +27,6 @@ body{
     height: 50px;
     background-color: green;
 
-}
-
-.header span{
-    margin-left: 2%;
 }
 
 h3,p,label,input{

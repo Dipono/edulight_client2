@@ -27,9 +27,12 @@ export class HomeComponent implements OnInit {
     localStorage.removeItem('mentorBackground');
   }
 
-  move(){
-    console.log('move')
-    this._router.navigate(['/selectrole'])
+  menteeApplication(){
+    this._router.navigate(['/student-personal-info'])
+  }
+
+  mentorApplication(){
+    this._router.navigate(['/mentor-personal-info'])
   }
 
 }
