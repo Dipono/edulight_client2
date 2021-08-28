@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http';
+import { FlashMessagesModule } from 'flash-messages-angular'
 //import { MatCarouseModule } from '@angular/platform-browser/animations'
 
 import { RegisterService } from './register.service';
@@ -21,7 +22,7 @@ import { MentorSuccessfullyComponent } from './mentor-successfully/mentor-succes
 import { MentorBackgroundInfoComponent } from './mentor-background-info/mentor-background-info.component';
 import { NextOfKeenComponent } from './next-of-keen/next-of-keen.component';
 import { MenteeSubmitInfoComponent } from './mentee-submit-info/mentee-submit-info.component';
-import { MenteeInfoComponent } from './mentee-info/mentee-info.component';
+
 //const routes:Routes
 @NgModule({
   declarations: [
@@ -36,14 +37,14 @@ import { MenteeInfoComponent } from './mentee-info/mentee-info.component';
     MentorSuccessfullyComponent,
     MentorBackgroundInfoComponent,
     NextOfKeenComponent,
-    MenteeSubmitInfoComponent,
-    MenteeInfoComponent
+    MenteeSubmitInfoComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FlashMessagesModule.forRoot(),    
     RouterModule.forRoot([
       //routes,{scrollPositionRestoration: 'enable'},
       {path: '', component:HomeComponent},
@@ -56,8 +57,7 @@ import { MenteeInfoComponent } from './mentee-info/mentee-info.component';
       {path: 'mentor-submit-info', component:MentorSubmitInfoComponent},
       {path: 'mentor-successfully', component:MentorSuccessfullyComponent},
       {path: 'next-of-kin', component:NextOfKeenComponent},//
-      {path: 'mentee-submit-info', component:MenteeSubmitInfoComponent},
-      {path: 'mentee-info', component:MenteeInfoComponent}
+      {path: 'mentee-submit-info', component:MenteeSubmitInfoComponent}
       
 
       

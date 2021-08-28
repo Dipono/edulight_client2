@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { RegisterService } from '../register.service';
-
+import { FlashMessagesService } from 'flash-messages-angular';
 
 
 @Component({
@@ -29,7 +29,8 @@ export class MentorPersonalInfoComponent implements OnInit {
     instagram: '',
     linkedin: ''
   }
-  constructor(private _router: Router, private route: ActivatedRoute, private checkEmailMentor: RegisterService) {
+  constructor(private _router: Router, private route: ActivatedRoute, 
+    private checkEmailMentor: RegisterService, private flashMessage: FlashMessagesService) {
 
 
     /*this.myForm = new FormGroup({
@@ -50,15 +51,25 @@ export class MentorPersonalInfoComponent implements OnInit {
     })*/
   }
 
-  /* mentor2 ={
-     id: 123456
-   }*/
-
-
   ngOnInit(): void {
     localStorage.removeItem('mentor');
+    window.scrollTo(0, 0);
+    this.notRegisterd();
+  }
+  registerMessage:string
+
+  notRegisterd(){
     
-    window.scrollTo(0, 0)
+    this.registerMessage = '';
+    this.registerMessage = localStorage.getItem('registerMessage')
+    console.log(this.registerMessage)
+    if(this.registerMessage==null){
+
+    }
+    else{
+      this.flashMessage.show(this.registerMessage, {cssClass: 'alert-danger', timeout:5000});
+      localStorage.removeItem('registerMessage');
+    }
   }
 
   errMessage: string
@@ -72,23 +83,19 @@ export class MentorPersonalInfoComponent implements OnInit {
     let thisYear = new Date().getFullYear()
 
     if (thisYear - Number(this.mentor.dob.substring(0, 4)) >= 18) {
-      console.log('good')
+      
       this.dobMessage = ''
       return true
     }
-    console.log('You must be 18 or older')
     this.dobMessage = 'You must be 18 or older'
     return false
 
   }
 
+
   educational() {
-    /*for(var items in this.mentor){
-      //console.log(this.mentor[k])
-      console.log(items,' ',this.mentor[items])
-      this.mentor2[items] = this.mentor[items];
-      
-    }*/
+    //this.registerMessage='';
+    
     this.errMessage = '';
     this.existEmail = '';
     this.dobMessage = ''

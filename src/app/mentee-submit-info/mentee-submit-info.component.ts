@@ -33,7 +33,7 @@ export class MenteeSubmitInfoComponent implements OnInit {
     this._router.navigate(['/next-of-kin'])
   }
 
-  successMessage: string
+  registerMessage: string
   successfully() {
 
     this.menteeApp = JSON.parse(localStorage.getItem('mentee'));
@@ -60,11 +60,16 @@ export class MenteeSubmitInfoComponent implements OnInit {
         localStorage.removeItem('mentee');
         localStorage.removeItem('menteeEdu');
         localStorage.removeItem('menteeKin');
+        this.registerMessage='You Are Successfully Registered';
+        localStorage.setItem('registerMessage', this.registerMessage)
         this._router.navigate(['/'])
 
       },
         error => {
           console.log(error)
+          this.registerMessage='You Are Not Successfully Registered, Please Register again';
+          localStorage.setItem('registerMessage', this.registerMessage)
+          this._router.navigate(['/student-personal-info'])
 
         })
 

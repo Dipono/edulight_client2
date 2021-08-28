@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 import { RegisterService } from '../register.service';
+import { FlashMessagesService } from 'flash-messages-angular';
 
 
 @Component({
@@ -29,12 +30,28 @@ export class StudentPersonalInfoComponent implements OnInit {
     medicalCondition: '',
   }
 
-  constructor(private _router: Router, private checkIdMentee: RegisterService) { }
+  constructor(private _router: Router, private checkIdMentee: RegisterService, 
+              private flashMessage: FlashMessagesService) { }
 
   ngOnInit(): void {
     localStorage.removeItem('mentee');
-
     window.scrollTo(0, 0)
+    this.notRegisterd();
+  }
+  
+  registerMessage:string
+  notRegisterd(){
+    
+    this.registerMessage = '';
+    this.registerMessage = localStorage.getItem('registerMessage')
+    console.log(this.registerMessage)
+    if(this.registerMessage==null){
+
+    }
+    else{
+      this.flashMessage.show(this.registerMessage, {cssClass: 'alert-danger', timeout:5000});
+      localStorage.removeItem('registerMessage');
+    }
   }
 
   validateSAID() {
