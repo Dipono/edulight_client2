@@ -118,7 +118,6 @@ export class StudentPersonalInfoComponent implements OnInit {
     console.log(this.validateDOBId())
     //console.log(this.getYear())
 
-
     this.disDescribe = '';
     this.errMessage = '';
     this.incorrectDob = '';

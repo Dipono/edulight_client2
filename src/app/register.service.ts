@@ -23,6 +23,10 @@ export class RegisterService {
       observe: 'body'
     });
   }
+
+  searchMentee(myId){
+    return this.http.get('https://edulight-server.herokuapp.com/existingMenteeId/'+myId)
+  }
   
   // *************************   LOCALHOST  ***********   LOCALHOST   ***********   LOCALHOST    *************************//
   /*
