@@ -9,25 +9,20 @@ export class RegisterService {
   constructor(private http: HttpClient) { }
 
   registerMentor(body: any){
-    return this.http.post('https://eduligt-mysql.herokuapp.com/registerMentor', body, {
+    return this.http.post('https://edulight-server.herokuapp.com/registerMentor', body, {
       observe: 'body'
     });
   }
 
   searchMentor(myEmail){
-    return this.http.get('https://eduligt-mysql.herokuapp.com/existingMentorEmail/'+myEmail)
+    return this.http.get('https://edulight-server.herokuapp.com/existingMentorEmail/'+myEmail)
   }
   
  registerMentee(body: any){
-    return this.http.post('https://eduligt-mysql.herokuapp.com/registerMentee', body, {
+    return this.http.post('https://edulight-server.herokuapp.com/registerMentee', body, {
       observe: 'body'
     });
   }
-
-  searchMentee(myId){
-    return this.http.get('https://eduligt-mysql.herokuapp.com/existingMenteeId/'+myId)
-  }
-
   
   // *************************   LOCALHOST  ***********   LOCALHOST   ***********   LOCALHOST    *************************//
   /*
